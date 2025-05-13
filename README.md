@@ -127,7 +127,8 @@ solena-medical/
 
 1. Clone the repository:
    ```bash
-   git clone [repository-url]
+   git clone https://github.com/your-username/SOLENA.git
+   cd SOLENA
    ```
 
 2. Open the project in your preferred code editor.
@@ -180,5 +181,147 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 ## Contact
 
 For any questions or concerns, please contact:
-- Email: info@solena-medical.com
-- Phone: +1 (234) 567-890 
+- Email: worldmyview24@gmail.com
+- GitHub Issues: [Create new issue](https://github.com/your-username/SOLENA/issues)
+
+## Website Maintenance Guide
+
+## Quick Start
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/SOLENA.git
+   cd SOLENA
+   ```
+
+2. Open the website:
+   - Double-click `index.html` to view in browser
+   - Or use Live Server in VS Code
+
+## Website Structure
+```
+SOLENA/
+├── index.html          # English homepage
+├── about.html          # English about page
+├── services.html       # English services page
+├── contact.html        # English contact page
+├── css/
+│   └── style.css      # Main stylesheet
+├── js/
+│   └── main.js        # Main JavaScript file
+├── images/            # Image assets
+├── assets/
+│   └── report/        # Report images
+├── ko/                # Korean version
+├── ja/                # Japanese version
+└── de/                # German version
+```
+
+## Making Changes
+
+### 1. Update Content
+- Edit HTML files in the root directory for English content
+- Edit files in language folders (ko/, ja/, de/) for translations
+- Keep content consistent across all language versions
+
+### 2. Update Styles
+- Edit `css/style.css` for visual changes
+- Test changes across all pages and languages
+- Ensure mobile responsiveness
+
+### 3. Update JavaScript
+- Edit `js/main.js` for functionality changes
+- Test all interactive features
+- Check console for errors
+
+### 4. Add/Update Images
+- Place new images in `images/` directory
+- Use descriptive filenames
+- Optimize images for web (compress if needed)
+
+## Report Viewer Maintenance
+
+### 1. Update Report Pages
+- Place new report images in `assets/report/`
+- Name format: `report-page-XX.png` (XX = 01-53)
+- Update report titles in `js/main.js` if needed
+
+### 2. Test Report Viewer
+- Check all 53 pages load correctly
+- Verify navigation works
+- Test zoom functionality
+- Check all language versions
+
+## Version Control
+
+### 1. Regular Updates
+```bash
+# Pull latest changes
+git pull
+
+# Add changes
+git add .
+
+# Commit changes
+git commit -m "Description of changes"
+
+# Push to GitHub
+git push
+```
+
+### 2. Create New Branch
+```bash
+# Create and switch to new branch
+git checkout -b feature-name
+
+# Make changes, then commit
+git add .
+git commit -m "Add new feature"
+
+# Push new branch
+git push origin feature-name
+```
+
+## Best Practices
+
+### 1. Before Making Changes
+- Pull latest changes from GitHub
+- Create new branch for major changes
+- Test current version works
+
+### 2. While Making Changes
+- Keep language versions in sync
+- Test on different browsers
+- Check mobile responsiveness
+- Validate HTML/CSS
+
+### 3. After Making Changes
+- Test all features
+- Check all language versions
+- Commit with clear messages
+- Push to GitHub
+
+## Troubleshooting
+
+### 1. Report Viewer Issues
+- Check image paths in `js/main.js`
+- Verify all images exist in `assets/report/`
+- Clear browser cache
+- Check console for errors
+
+### 2. Language Version Issues
+- Verify language attribute in HTML
+- Check file paths in language folders
+- Ensure translations are complete
+
+### 3. Git Issues
+- Use `git status` to check state
+- Use `git log` to view history
+- Use `git checkout` to revert changes
+
+## Contact
+For technical support or questions:
+- Email: worldmyview24@gmail.com
+- GitHub Issues: [Create new issue](https://github.com/your-username/SOLENA/issues)
+
+## License
+This project is proprietary and confidential. 

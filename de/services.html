@@ -6,6 +6,8 @@
     <title>Leistungen - SOLENA</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     <!-- Custom CSS -->
     <link href="../css/style.css" rel="stylesheet">
     <!-- Font Awesome -->
@@ -25,6 +27,33 @@
         <a href="../de/index.html" class="active" role="menuitem" aria-current="page">Deutsch</a>
     </div>
 </div>  
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <span class="fw-bold" style="font-size: 1.8rem; letter-spacing: 1px; color: #0d6efd;">SOLENA</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Startseite</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">Über uns</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="services.html">Dienstleistungen</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Kontakt</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </nav>
 
     <!-- Services Hero Section -->
@@ -102,11 +131,27 @@
         </div>
     </section>
 
+    <!-- Sample Report Section -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Erleben Sie unsere Marktintelligenz-Exzellenz</h2>
+            <p class="text-center text-muted mb-5">Entdecken Sie unsere umfassenden Marktanalysefähigkeiten durch diesen Beispielbericht, der unseren datengesteuerten Ansatz zur Marktintelligenz demonstriert.</p>
+            <div class="swiper report-swiper">
+                <div class="swiper-wrapper">
+                    <!-- Report pages will be added dynamically via JavaScript -->
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </div>
+    </section>
+
     <!-- Call to Action -->
-    <section class="py-5 bg-primary text-white">
+    <section class="py-4 bg-primary text-white">
         <div class="container text-center">
-            <h2 class="h3 mb-4">Bereit für den globalen Markt?</h2>
-            <p class="lead mb-4">Lassen Sie uns Ihnen helfen, Ihre Medizintechnik weltweit zu vermarkten.</p>
+            <h2 class="h3 mb-4">Bereit für die globale Expansion?</h2>
+            <p class="lead mb-4">Lassen Sie uns besprechen, wie wir Ihnen zum Erfolg auf internationalen Märkten verhelfen können.</p>
             <a href="contact.html" class="btn btn-light btn-lg">Kontaktieren Sie uns</a>
         </div>
     </section>
@@ -128,6 +173,8 @@
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <!-- Custom JS -->
     <script src="../js/main.js"></script>
 </body>

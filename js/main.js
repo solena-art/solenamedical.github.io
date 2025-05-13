@@ -377,28 +377,107 @@ document.addEventListener('DOMContentLoaded', function() {
             // Clear any existing slides
             swiperWrapper.innerHTML = '';
             
-            for (let i = 1; i <= 53; i++) {
+            // Get current language
+            const currentLang = document.documentElement.lang;
+            
+            // Define report pages for each language
+            const reportPages = {
+                'en': Array.from({length: 53}, (_, i) => ({
+                    title: `Page ${i + 1}`,
+                    image: `assets/report/report-page-${String(i + 1).padStart(2, '0')}.png`
+                })),
+                'ko': Array.from({length: 53}, (_, i) => ({
+                    title: `페이지 ${i + 1}`,
+                    image: `../assets/report/report-page-${String(i + 1).padStart(2, '0')}.png`
+                })),
+                'ja': Array.from({length: 53}, (_, i) => ({
+                    title: `ページ ${i + 1}`,
+                    image: `../assets/report/report-page-${String(i + 1).padStart(2, '0')}.png`
+                })),
+                'de': Array.from({length: 53}, (_, i) => ({
+                    title: `Seite ${i + 1}`,
+                    image: `../assets/report/report-page-${String(i + 1).padStart(2, '0')}.png`
+                }))
+            };
+            
+            // Get pages for current language or default to English
+            const pages = reportPages[currentLang] || reportPages['en'];
+            
+            pages.forEach((page, index) => {
                 const slide = document.createElement('div');
                 slide.className = 'swiper-slide';
                 
-                const img = document.createElement('img');
-                const imagePath = `assets/report/report-page-${String(i).padStart(2, '0')}.png`;
-                img.src = imagePath;
-                img.alt = `Report Page ${i}`;
+                const content = document.createElement('div');
+                content.className = 'report-slide-content';
+                content.innerHTML = `
+                    <h3 class="mb-4">${page.title}</h3>
+                    <div class="report-preview">
+                        <img src="${page.image}" alt="${page.title}" class="img-fluid">
+                    </div>
+                    <p class="mt-4 text-muted">${currentLang === 'en' ? 'Sample Report Page' : 
+                        currentLang === 'ko' ? '샘플 보고서 페이지' :
+                        currentLang === 'ja' ? 'サンプルレポートページ' :
+                        'Beispielberichtsseite'} ${index + 1}</p>
+                `;
                 
-                // Add error handling for image loading
-                img.onerror = function() {
-                    console.error(`Failed to load image: ${imagePath}`);
-                    this.style.display = 'none';
-                };
-                
-                img.onload = function() {
-                    console.log(`Successfully loaded image: ${imagePath}`);
-                };
-                
-                slide.appendChild(img);
+                slide.appendChild(content);
                 swiperWrapper.appendChild(slide);
+            });
+
+            // Add zoom controls
+            const controls = document.createElement('div');
+            controls.className = 'report-controls';
+            controls.innerHTML = `
+                <button class="zoom-control zoom-in" title="Zoom In">
+                    <i class="fas fa-search-plus"></i>
+                </button>
+                <button class="zoom-control zoom-out" title="Zoom Out">
+                    <i class="fas fa-search-minus"></i>
+                </button>
+                <button class="zoom-control zoom-reset" title="Reset Zoom">
+                    <i class="fas fa-undo"></i>
+                </button>
+            `;
+            document.querySelector('.report-swiper').appendChild(controls);
+
+            // Initialize zoom functionality
+            let currentZoom = 1;
+            const zoomStep = 0.2;
+            const maxZoom = 3;
+            const minZoom = 0.5;
+
+            function updateZoom() {
+                const activeSlide = document.querySelector('.swiper-slide-active .report-preview img');
+                if (activeSlide) {
+                    activeSlide.style.transform = `scale(${currentZoom})`;
+                    activeSlide.style.transition = 'transform 0.3s ease';
+                }
             }
+
+            document.querySelector('.zoom-in').addEventListener('click', () => {
+                if (currentZoom < maxZoom) {
+                    currentZoom += zoomStep;
+                    updateZoom();
+                }
+            });
+
+            document.querySelector('.zoom-out').addEventListener('click', () => {
+                if (currentZoom > minZoom) {
+                    currentZoom -= zoomStep;
+                    updateZoom();
+                }
+            });
+
+            document.querySelector('.zoom-reset').addEventListener('click', () => {
+                currentZoom = 1;
+                updateZoom();
+            });
+
+            // Reset zoom when changing slides
+            reportSwiper.on('slideChange', () => {
+                currentZoom = 1;
+                updateZoom();
+            });
             
             // Update swiper after adding slides
             reportSwiper.update();
@@ -413,55 +492,23 @@ document.addEventListener('DOMContentLoaded', function() {
  * Language dropdown functionality
  */
 function initLanguageDropdown() {
-    const languageDropdown = document.querySelector('.language-dropdown');
     const languageToggle = document.querySelector('.language-toggle');
+    const languageDropdown = document.querySelector('.language-dropdown');
+    const languageContent = document.querySelector('.language-dropdown-content');
 
-    if (languageDropdown && languageToggle) {
-        // Toggle dropdown when clicking the button
+    if (languageToggle && languageDropdown && languageContent) {
         languageToggle.addEventListener('click', function(e) {
-            e.preventDefault();
             e.stopPropagation();
-            const isExpanded = languageDropdown.classList.contains('show');
             languageDropdown.classList.toggle('show');
-            languageToggle.setAttribute('aria-expanded', !isExpanded);
+            languageContent.style.display = languageDropdown.classList.contains('show') ? 'block' : 'none';
         });
 
         // Close dropdown when clicking outside
         document.addEventListener('click', function(e) {
             if (!languageDropdown.contains(e.target)) {
                 languageDropdown.classList.remove('show');
-                languageToggle.setAttribute('aria-expanded', 'false');
+                languageContent.style.display = 'none';
             }
-        });
-
-        // Close dropdown when pressing escape key
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                languageDropdown.classList.remove('show');
-                languageToggle.setAttribute('aria-expanded', 'false');
-            }
-        });
-
-        // Keyboard navigation within dropdown
-        const dropdownLinks = languageDropdown.querySelectorAll('.language-dropdown-content a');
-        
-        dropdownLinks.forEach((link, index) => {
-            link.addEventListener('keydown', function(e) {
-                // Navigation with arrow keys
-                if (e.key === 'ArrowDown') {
-                    e.preventDefault();
-                    if (index < dropdownLinks.length - 1) {
-                        dropdownLinks[index + 1].focus();
-                    }
-                } else if (e.key === 'ArrowUp') {
-                    e.preventDefault();
-                    if (index > 0) {
-                        dropdownLinks[index - 1].focus();
-                    } else {
-                        languageToggle.focus();
-                    }
-                }
-            });
         });
     }
 }

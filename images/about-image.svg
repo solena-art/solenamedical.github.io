@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="400" height="300" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+    <!-- Background -->
+    <rect width="400" height="300" fill="#f8f9fa"/>
+    
+    <!-- Building -->
+    <rect x="150" y="100" width="100" height="150" fill="white" stroke="#0056b3" stroke-width="2"/>
+    
+    <!-- Windows -->
+    <rect x="170" y="120" width="20" height="20" fill="white" stroke="#0056b3" stroke-width="2"/>
+    <rect x="210" y="120" width="20" height="20" fill="white" stroke="#0056b3" stroke-width="2"/>
+    <rect x="170" y="150" width="20" height="20" fill="white" stroke="#0056b3" stroke-width="2"/>
+    <rect x="210" y="150" width="20" height="20" fill="white" stroke="#0056b3" stroke-width="2"/>
+    <rect x="170" y="180" width="20" height="20" fill="white" stroke="#0056b3" stroke-width="2"/>
+    <rect x="210" y="180" width="20" height="20" fill="white" stroke="#0056b3" stroke-width="2"/>
+    
+    <!-- Door -->
+    <rect x="190" y="200" width="20" height="50" fill="white" stroke="#0056b3" stroke-width="2"/>
+    
+    <!-- Medical Cross -->
+    <path d="M350 100 L350 120 L340 120 L340 130 L350 130 L350 150 L360 150 L360 130 L370 130 L370 120 L360 120 L360 100 Z" 
+          fill="#0056b3"/>
+    
+    <!-- Globe -->
+    <circle cx="50" cy="150" r="30" stroke="#0056b3" stroke-width="2" fill="none"/>
+    <path d="M20 150 L80 150 M50 120 L50 180" stroke="#0056b3" stroke-width="2"/>
+</svg> 

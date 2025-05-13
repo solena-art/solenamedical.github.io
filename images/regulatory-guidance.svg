@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="400" height="300" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+    <!-- Background -->
+    <rect width="400" height="300" fill="#f8f9fa"/>
+    
+    <!-- Document -->
+    <rect x="150" y="50" width="100" height="140" fill="white" stroke="#0056b3" stroke-width="2"/>
+    
+    <!-- Document Lines -->
+    <line x1="170" y1="80" x2="230" y2="80" stroke="#0056b3" stroke-width="2"/>
+    <line x1="170" y1="100" x2="230" y2="100" stroke="#0056b3" stroke-width="2"/>
+    <line x1="170" y1="120" x2="230" y2="120" stroke="#0056b3" stroke-width="2"/>
+    <line x1="170" y1="140" x2="230" y2="140" stroke="#0056b3" stroke-width="2"/>
+    
+    <!-- Checkmark -->
+    <path d="M180 160 L190 170 L210 150" stroke="#0056b3" stroke-width="2" fill="none"/>
+    
+    <!-- Globe with Regulations -->
+    <circle cx="200" cy="220" r="30" stroke="#0056b3" stroke-width="2" fill="none"/>
+    <path d="M170 220 L230 220 M200 190 L200 250" stroke="#0056b3" stroke-width="2"/>
+</svg> 

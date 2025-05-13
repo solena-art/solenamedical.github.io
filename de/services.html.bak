@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leistungen - SOLENA</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="../css/style.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Language Selector -->
+<div class="language-dropdown">
+    <button class="language-toggle" aria-expanded="false" aria-haspopup="true" aria-label="Sprache auswählen">
+        <span class="active-language">DE</span>
+        <i class="fas fa-chevron-down ms-2"></i>
+    </button>
+    <div class="language-dropdown-content" role="menu">
+        <a href="../index.html" role="menuitem">English</a>
+        <a href="../ko/index.html" role="menuitem">한국어</a>
+        <a href="../ja/index.html" role="menuitem">日本語</a>
+        <a href="../de/index.html" class="active" role="menuitem" aria-current="page">Deutsch</a>
+    </div>
+</div> 
+    </nav>
+
+    <!-- Services Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row min-vh-100 align-items-center">
+                <div class="col-lg-8">
+                    <h1 class="display-4 fw-bold mb-4">Unsere Leistungen</h1>
+                    <p class="lead mb-4">Umfassende Lösungen für Ihren Einstieg in den globalen Medizintechnikmarkt</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Market Intelligence Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <h2 class="h3 mb-4">Marktanalyse</h2>
+                    <p class="text-muted mb-4">Entscheiden Sie sich mit Zuversicht durch fundierte Marktanalysen und strategische Einblicke.</p>
+                    <ul class="list-unstyled">
+                        <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Marktgrößenanalyse</li>
+                        <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Wettbewerbsumfeldbewertung</li>
+                        <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Regionale Marktchancen</li>
+                        <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Wachstumstrendprognosen</li>
+                    </ul>
+                </div>
+                <div class="col-lg-6">
+                    <img src="../images/market-intelligence.svg" alt="Marktanalyse" class="img-fluid rounded shadow">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Regulatory Guidance Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 order-lg-2 mb-4 mb-lg-0">
+                    <h2 class="h3 mb-4">Regulatorische Beratung</h2>
+                    <p class="text-muted mb-4">Navigieren Sie durch komplexe regulatorische Anforderungen mit unserer spezialisierten Beratung.</p>
+                    <ul class="list-unstyled">
+                        <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Regulatorische Strategieentwicklung</li>
+                        <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Konformitätsbewertung</li>
+                        <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Zulassungsunterstützung</li>
+                        <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Qualitätsmanagementsysteme</li>
+                    </ul>
+                </div>
+                <div class="col-lg-6 order-lg-1">
+                    <img src="../images/regulatory-guidance.svg" alt="Regulatorische Beratung" class="img-fluid rounded shadow">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Consultant Matching Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <h2 class="h3 mb-4">Beratervermittlung</h2>
+                    <p class="text-muted mb-4">Verbinden Sie sich mit erfahrenen Beratern, die Ihnen helfen, Ihre globalen Ziele zu erreichen.</p>
+                    <ul class="list-unstyled">
+                        <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Branchenspezifische Expertise</li>
+                        <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Lokale Marktkenntnisse</li>
+                        <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Kulturelles Verständnis</li>
+                        <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> Kontinuierliche Unterstützung</li>
+                    </ul>
+                </div>
+                <div class="col-lg-6">
+                    <img src="../images/consultant-matching.svg" alt="Beratervermittlung" class="img-fluid rounded shadow">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-5 bg-primary text-white">
+        <div class="container text-center">
+            <h2 class="h3 mb-4">Bereit für den globalen Markt?</h2>
+            <p class="lead mb-4">Lassen Sie uns Ihnen helfen, Ihre Medizintechnik weltweit zu vermarkten.</p>
+            <a href="contact.html" class="btn btn-light btn-lg">Kontaktieren Sie uns</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>SOLENA</h5>
+                    <p>Wir unterstützen Medizintechnikhersteller beim globalen Erfolg.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p>Kontakt: <a href="mailto:worldmyview24@gmail.com" class="text-light">worldmyview24@gmail.com</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="../js/main.js"></script>
+</body>
+</html> 

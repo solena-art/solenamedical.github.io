@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>会社概要 - SOLENA</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="../css/style.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Language Selector -->
+<div class="language-dropdown">
+    <button class="language-toggle" aria-expanded="false" aria-haspopup="true" aria-label="言語選択">
+        <span class="active-language">JP</span>
+        <i class="fas fa-chevron-down ms-2"></i>
+    </button>
+    <div class="language-dropdown-content" role="menu">
+        <a href="../index.html" role="menuitem">English</a>
+        <a href="../ko/index.html" role="menuitem">한국어</a>
+        <a href="../ja/index.html" class="active" role="menuitem" aria-current="page">日本語</a>
+        <a href="../de/index.html" role="menuitem">Deutsch</a>
+    </div>
+</div> 
+    </nav>
+
+    <!-- About Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row min-vh-100 align-items-center">
+                <div class="col-lg-8">
+                    <h1 class="display-4 fw-bold mb-4">SOLENAについて</h1>
+                    <p class="lead mb-4">グローバル医療機器市場拡大の信頼できるパートナー</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission & Vision Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <h2 class="h3 mb-4">ミッション</h2>
+                            <p class="text-muted">医療機器メーカーがグローバル市場に成功裏に参入し、革新的な医療ソリューションを世界中の患者に提供するために必要な知識、リソース、つながりを提供します。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <h2 class="h3 mb-4">ビジョン</h2>
+                            <p class="text-muted">医療機器企業の国際市場参入方法を革新し、よりアクセスしやすく、効率的で、成功するグローバルコンサルティング企業になることです。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Artndesign Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <h2 class="h3 mb-4">Artndesignのサポート</h2>
+                    <p class="text-muted mb-4">SOLENAは、医療機器分野で豊富な経験を持つ専門マーケティングエージェンシーであるArtndesignのサポートを受けています。親会社は以下の分野で数十年の専門性を提供しています：</p>
+                    <ul class="list-unstyled">
+                        <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> 医療機器マーケティング</li>
+                        <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> 医療産業イベント</li>
+                        <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> 国際展示会</li>
+                        <li class="mb-3"><i class="fas fa-check text-primary me-2"></i> グローバル市場戦略</li>
+                    </ul>
+                </div>
+                <div class="col-lg-6">
+                    <img src="../images/about-image.svg" alt="Artndesignチーム" class="img-fluid rounded shadow">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>SOLENA</h5>
+                    <p>医療機器メーカーのグローバルな成功を支援します。</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p>お問い合わせ: <a href="mailto:worldmyview24@gmail.com" class="text-light">worldmyview24@gmail.com</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="../js/main.js"></script>
+</body>
+</html> 

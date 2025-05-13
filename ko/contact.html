@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문의하기 - SOLENA</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="../css/style.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Language Selector -->
+<div class="language-dropdown">
+    <button class="language-toggle" aria-expanded="false" aria-haspopup="true" aria-label="언어 선택">
+        <span class="active-language">KO</span>
+        <i class="fas fa-chevron-down ms-2"></i>
+    </button>
+    <div class="language-dropdown-content" role="menu">
+        <a href="../index.html" role="menuitem">English</a>
+        <a href="../ko/index.html" class="active" role="menuitem" aria-current="page">한국어</a>
+        <a href="../ja/index.html" role="menuitem">日本語</a>
+        <a href="../de/index.html" role="menuitem">Deutsch</a>
+    </div>
+</div>  
+    </nav>
+
+    <!-- Contact Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row min-vh-100 align-items-center">
+                <div class="col-lg-8">
+                    <h1 class="display-4 fw-bold mb-4">문의하기</h1>
+                    <p class="lead mb-4">글로벌 의료기기 시장 진출에 대해 논의해 보겠습니다</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body p-4 p-md-5">
+                            <h2 class="h3 mb-4">문의 양식</h2>
+                            <form id="contactForm">
+                                <div class="mb-3">
+                                    <label for="name" class="form-label">이름</label>
+                                    <input type="text" class="form-control" id="name" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="company" class="form-label">회사명</label>
+                                    <input type="text" class="form-control" id="company" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="email" class="form-label">이메일</label>
+                                    <input type="email" class="form-control" id="email" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="phone" class="form-label">전화번호</label>
+                                    <input type="tel" class="form-control" id="phone">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="message" class="form-label">문의 내용</label>
+                                    <textarea class="form-control" id="message" rows="5" required></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-lg w-100">문의하기</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Information Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <h2 class="h3 mb-4">연락처 정보</h2>
+                    <p class="lead mb-4">글로벌 의료기기 시장 진출에 대해 논의하고 싶으시다면 언제든지 연락해 주세요.</p>
+                    <div class="d-flex justify-content-center gap-4">
+                        <a href="mailto:worldmyview24@gmail.com" class="text-decoration-none">
+                            <i class="fas fa-envelope fa-2x text-primary"></i>
+                            <p class="mt-2">worldmyview24@gmail.com</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>SOLENA</h5>
+                    <p>의료기기 제조업체의 글로벌 성공을 지원합니다.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p>문의: <a href="mailto:worldmyview24@gmail.com" class="text-light">worldmyview24@gmail.com</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="../js/main.js"></script>
+</body>
+</html> 

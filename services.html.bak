@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - SOLENA</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <!-- Custom CSS -->
+    <link href="css/style.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Language Selector -->
+<div class="language-dropdown">
+    <button class="language-toggle" aria-expanded="false" aria-haspopup="true" aria-label="Select language">
+        <span class="active-language">EN</span>
+        <i class="fas fa-chevron-down ms-2"></i>
+    </button>
+    <div class="language-dropdown-content" role="menu">
+        <a href="index.html" class="active" role="menuitem" aria-current="page">English</a>
+        <a href="ko/index.html" role="menuitem">한국어</a>
+        <a href="ja/index.html" role="menuitem">日本語</a>
+        <a href="de/index.html" role="menuitem">Deutsch</a>
+    </div>
+</div> 
+    </nav>
+
+    <!-- Services Hero Section -->
+    <section class="hero-section" style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);">
+        <div class="container">
+            <div class="row min-vh-100 align-items-center">
+                <div class="col-lg-8">
+                    <h1 class="display-4 fw-bold mb-4">Comprehensive Solutions for Global Medtech Success</h1>
+                    <p class="lead mb-4">In an increasingly complex global healthcare market, manufacturers need more than just regulatory compliance. SOLENA delivers strategic solutions that transform market entry challenges into opportunities for sustainable growth and market leadership.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center">
+                            <img src="images/market-intelligence.svg" alt="Strategic Market Intelligence" class="img-fluid mb-4" style="max-height: 120px;">
+                            <h3 class="h4 mb-3">Strategic Market Intelligence</h3>
+                            <p class="text-muted">Make data-driven decisions with our comprehensive market analysis:</p>
+                            <ul class="list-unstyled text-start">
+                                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Market size and growth trajectory analysis</li>
+                                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Competitive landscape and positioning</li>
+                                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Pricing and reimbursement strategy</li>
+                                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Distribution channel optimization</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center">
+                            <img src="images/regulatory-guidance.svg" alt="Regulatory Excellence" class="img-fluid mb-4" style="max-height: 120px;">
+                            <h3 class="h4 mb-3">Regulatory Excellence</h3>
+                            <p class="text-muted">Accelerate your path to market with expert regulatory guidance:</p>
+                            <ul class="list-unstyled text-start">
+                                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> MDR and FDA compliance strategy</li>
+                                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Global regulatory framework navigation</li>
+                                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Clinical evaluation and documentation</li>
+                                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Post-market surveillance planning</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center">
+                            <img src="images/consultant-matching.svg" alt="Market Entry Mastery" class="img-fluid mb-4" style="max-height: 120px;">
+                            <h3 class="h4 mb-3">Market Entry Mastery</h3>
+                            <p class="text-muted">Transform market entry challenges into opportunities:</p>
+                            <ul class="list-unstyled text-start">
+                                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Strategic partner identification</li>
+                                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Market entry strategy development</li>
+                                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Commercialization excellence</li>
+                                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Performance monitoring and optimization</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sample Report Section -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Experience Our Market Intelligence Excellence</h2>
+            <p class="text-center text-muted mb-5">Explore our comprehensive market analysis capabilities through this sample report, showcasing our data-driven approach to market intelligence.</p>
+            <div class="swiper report-swiper">
+                <div class="swiper-wrapper">
+                    <!-- Slides will be added dynamically via JavaScript -->
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-4 bg-primary text-white">
+        <div class="container text-center">
+            <h2 class="h3 mb-4">Ready to Expand Your Global Reach?</h2>
+            <p class="lead mb-4">Let's discuss how we can help you succeed in international markets.</p>
+            <a href="contact.html" class="btn btn-light btn-lg">Contact Us Today</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-4">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <h5>SOLENA</h5>
+                    <p>Empowering medical device manufacturers to succeed globally.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p>Contact us: <a href="mailto:worldmyview24@gmail.com" class="text-light">worldmyview24@gmail.com</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+</body>
+</html> 

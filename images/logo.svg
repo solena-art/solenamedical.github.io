@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200" height="50" viewBox="0 0 200 50" xmlns="http://www.w3.org/2000/svg">
+    <!-- Background Shape -->
+    <rect x="0" y="0" width="200" height="50" fill="none"/>
+    
+    <!-- SOLENA Text -->
+    <text x="20" y="30" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#0056b3">
+        SOLENA
+    </text>
+    
+    <!-- Domain Text -->
+    <text x="20" y="45" font-family="Arial, sans-serif" font-size="10" fill="#666">
+        solenamedical.com
+    </text>
+    
+    <!-- Decorative Line -->
+    <line x1="20" y1="38" x2="180" y2="38" stroke="#0056b3" stroke-width="2" stroke-linecap="round"/>
+</svg> 

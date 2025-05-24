@@ -3,13 +3,18 @@
  */
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Initialize components
+    console.log('DOM fully loaded and parsed');
     initNavbar();
     initAccessibility();
     detectLanguage();
     initLanguageDropdown();
     fixNavigationDisplay();
-    initReportSwiper();
+    
+    // Wait for all resources to load before initializing Swiper
+    window.addEventListener('load', function() {
+        console.log('All resources loaded, initializing Swiper...');
+        setTimeout(initReportSwiper, 500); // Give extra time for Swiper to be fully loaded
+    });
 });
 
 /**
@@ -368,105 +373,153 @@ if (contactForm) {
  * Initialize report swiper
  */
 function initReportSwiper() {
-    const reportSwiper = document.querySelector('.report-swiper');
-    if (!reportSwiper) return;
-
-    const isMobile = window.innerWidth <= 768;
+    console.log('Attempting to initialize Report Swiper...');
     
-    const calculateHeight = () => {
-        const viewportHeight = window.innerHeight;
-        const offset = isMobile ? 250 : 400;
-        const height = Math.min(
-            Math.max(viewportHeight - offset, isMobile ? 350 : 500),
-            isMobile ? 500 : 800
-        );
-        reportSwiper.style.height = `${height}px`;
-    };
+    // Check if Swiper is loaded
+    if (typeof Swiper === 'undefined') {
+        console.error('Swiper is not defined');
+        setTimeout(initReportSwiper, 100); // Retry after 100ms
+        return;
+    }
 
-    // Initial height calculation
-    calculateHeight();
+    const swiperContainer = document.querySelector('.report-swiper');
+    const swiperWrapper = document.querySelector('.report-swiper .swiper-wrapper');
 
-    const swiper = new Swiper(reportSwiper, {
-        slidesPerView: 1,
-        spaceBetween: 0,
-        centeredSlides: true,
-        loop: false,
-        preloadImages: false,
-        lazy: {
-            loadPrevNext: true,
-            loadPrevNextAmount: 2,
-            loadOnTransitionStart: true
-        },
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-            dynamicBullets: isMobile
-        },
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-        keyboard: {
-            enabled: true,
-            onlyInViewport: true
-        },
-        touchRatio: 1,
-        touchAngle: 45,
-        resistance: true,
-        resistanceRatio: 0.85,
-        watchSlidesProgress: true,
-        preventInteractionOnTransition: true,
-        on: {
-            init: function() {
-                calculateHeight();
-                this.slides.forEach(slide => {
-                    const img = slide.querySelector('img');
-                    if (img) {
-                        img.style.opacity = '1';
-                    }
-                });
-            },
-            slideChange: function() {
-                this.slides.forEach(slide => {
-                    const img = slide.querySelector('img');
-                    if (img) {
-                        img.style.opacity = '1';
-                    }
-                });
-            },
-            touchStart: function() {
-                this.slides.forEach(slide => {
-                    const img = slide.querySelector('img');
-                    if (img) {
-                        img.style.transition = 'none';
-                    }
-                });
-            },
-            touchEnd: function() {
-                this.slides.forEach(slide => {
-                    const img = slide.querySelector('img');
-                    if (img) {
-                        img.style.transition = 'opacity 0.3s ease';
-                    }
-                });
-            }
+    if (!swiperContainer) {
+        console.error('Swiper container (.report-swiper) not found!');
+        return;
+    }
+
+    if (!swiperWrapper) {
+        console.error('Swiper wrapper (.report-swiper .swiper-wrapper) not found!');
+        return;
+    }
+
+    // Make sure the container is visible
+    swiperContainer.style.display = 'block';
+    swiperContainer.style.visibility = 'visible';
+    swiperContainer.style.opacity = '1';
+
+    // Check if Swiper is already initialized
+    if (swiperContainer.swiper) {
+        console.log('Swiper already initialized, destroying previous instance');
+        swiperContainer.swiper.destroy(true, true);
+    }
+
+    // Generate slides if wrapper is empty
+    if (swiperWrapper.children.length === 0) {
+        console.log('Generating Swiper slides...');
+        let slidesHTML = '';
+        for (let i = 1; i <= 53; i++) {
+            slidesHTML += `
+                <div class="swiper-slide">
+                    <div class="report-slide-content">
+                        <img class="swiper-lazy" 
+                             data-src="assets/report/report-page-${String(i).padStart(2, '0')}.png" 
+                             alt="Report Page ${i}"
+                             loading="lazy">
+                        <div class="swiper-lazy-preloader swiper-lazy-preloader-black"></div>
+                    </div>
+                </div>
+            `;
         }
-    });
+        swiperWrapper.innerHTML = slidesHTML;
+        console.log('Swiper slides generated');
+    }
 
-    // Handle window resize with debounce
-    let resizeTimeout;
-    window.addEventListener('resize', () => {
-        clearTimeout(resizeTimeout);
-        resizeTimeout = setTimeout(() => {
-            calculateHeight();
-            swiper.update();
-        }, 250);
-    });
+    try {
+        // Initialize Swiper with required modules
+        const reportSwiper = new Swiper(swiperContainer, {
+            slidesPerView: 1,
+            spaceBetween: 0,
+            centeredSlides: true,
+            loop: false,
+            preloadImages: false,
+            lazy: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+                dynamicBullets: true
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev'
+            },
+            keyboard: {
+                enabled: true,
+                onlyInViewport: true
+            },
+            watchSlidesProgress: true,
+            observer: true,
+            observeParents: true,
+            on: {
+                init: function (swiper) {
+                    console.log('Swiper initialized successfully');
+                    calculateHeight(swiper.el);
+                    updateNavigationVisibility(swiper);
+                    swiper.update();
+                },
+                slideChange: function (swiper) {
+                    console.log('Slide changed to:', swiper.activeIndex);
+                },
+                lazyImageLoad: function (swiper, slideEl, imageEl) {
+                    console.log('Loading image:', imageEl.getAttribute('data-src'));
+                },
+                lazyImageReady: function (swiper, slideEl, imageEl) {
+                    console.log('Image loaded:', imageEl.src);
+                    imageEl.style.opacity = 1;
+                }
+            }
+        });
 
-    // Cleanup on page unload
-    window.addEventListener('beforeunload', () => {
-        if (swiper) {
-            swiper.destroy(true, true);
+        // Set initial height
+        calculateHeight(swiperContainer);
+        
+        // Add resize handler
+        window.addEventListener('resize', function() {
+            calculateHeight(swiperContainer);
+            if (reportSwiper && !reportSwiper.destroyed) {
+                reportSwiper.update();
+            }
+        });
+
+    } catch (error) {
+        console.error('Error initializing Swiper:', error);
+    }
+}
+
+function calculateHeight(swiperElement) {
+    if (!swiperElement) return;
+    
+    const isMobile = window.innerWidth <= 768;
+    const isSmallScreen = window.innerWidth <= 480;
+    const offset = isSmallScreen ? 50 : isMobile ? 60 : 100;
+    const minHeight = isSmallScreen ? 400 : isMobile ? 500 : 800;
+    const maxHeight = isSmallScreen ? 700 : isMobile ? 800 : 1200;
+    
+    const height = Math.min(
+        Math.max(window.innerHeight - offset, minHeight),
+        maxHeight
+    );
+    
+    swiperElement.style.height = `${height}px`;
+    swiperElement.style.marginTop = `${offset}px`;
+    console.log(`Swiper height set to: ${height}px`);
+}
+
+function updateNavigationVisibility(swiperInstance) {
+    if (!swiperInstance || swiperInstance.destroyed) return;
+    
+    const isMobile = window.innerWidth <= 768;
+    const nextBtn = swiperInstance.navigation.nextEl;
+    const prevBtn = swiperInstance.navigation.prevEl;
+
+    [nextBtn, prevBtn].forEach(button => {
+        if (button) {
+            button.style.display = 'flex';
+            button.style.opacity = isMobile ? '0.7' : '1';
+            button.style.width = isMobile ? '36px' : '40px';
+            button.style.height = isMobile ? '36px' : '40px';
         }
     });
 }

@@ -132,18 +132,35 @@
     </section>
 
     <!-- Sample Report Section -->
-    <section class="py-5">
+    <section class="py-5" style="position: relative; z-index: 1;">
         <div class="container">
             <h2 class="text-center mb-5">市場インテリジェンスの卓越性を体験する</h2>
             <p class="text-center text-muted mb-5">データ駆動型の市場インテリジェンスアプローチを示すサンプルレポートを通じて、当社の包括的な市場分析能力をご覧ください。</p>
             <div class="swiper report-swiper">
                 <div class="swiper-wrapper">
-                    <!-- Report pages will be added dynamically via JavaScript -->
+                    <script>
+                        // Generate slides for all report pages
+                        for (let i = 1; i <= 53; i++) {
+                            const pageNum = i.toString().padStart(2, '0');
+                            document.write(`
+                                <div class="swiper-slide">
+                                    <div class="report-slide-content">
+                                        <img class="swiper-lazy" 
+                                             data-src="../assets/report/report-page-${pageNum}.png"
+                                             alt="Report Page ${i}"
+                                             style="max-width: 100%; max-height: 100%; transform: scale(1); margin: 0;">
+                                        <div class="swiper-lazy-preloader"></div>
+                                    </div>
+                                </div>
+                            `);
+                        }
+                    </script>
                 </div>
                 <div class="swiper-pagination"></div>
                 <div class="swiper-button-next"></div>
                 <div class="swiper-button-prev"></div>
             </div>
+            <p class="text-center text-muted mt-3 d-md-none">モバイルでは左右にスワイプしてレポートを閲覧できます。</p>
         </div>
     </section>
 

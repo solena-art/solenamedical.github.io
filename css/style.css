@@ -965,31 +965,32 @@ section.bg-light {
 
 /* Report Viewer Styles */
 .report-swiper {
-    max-width: 100%;
-    overflow: hidden;
+    width: 100%;
+    max-width: 1200px;
     margin: 0 auto;
-    position: relative;
-    height: calc(100vh - 300px); /* Adjust height based on viewport */
-    min-height: 400px;
+    overflow: hidden;
+    height: calc(100vh - 400px);
+    min-height: 500px;
     max-height: 800px;
+    position: relative;
 }
 
 .report-slide-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #f8f9fa;
+    width: 100%;
     height: 100%;
-    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f8f9fa;
 }
 
 .swiper-slide {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #f8f9fa;
-    overflow: hidden;
+    width: 100%;
     height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
 }
 
 .swiper-slide img {
@@ -998,7 +999,7 @@ section.bg-light {
     width: auto;
     height: auto;
     object-fit: contain;
-    transition: transform 0.3s ease;
+    display: block;
 }
 
 .swiper-lazy-preloader {
@@ -1022,13 +1023,13 @@ section.bg-light {
 /* Mobile Optimizations */
 @media (max-width: 768px) {
     .report-swiper {
-        height: calc(100vh - 200px);
-        min-height: 300px;
+        height: calc(100vh - 300px);
+        min-height: 400px;
         max-height: 600px;
     }
     
     .report-slide-content {
-        min-height: auto;
+        padding: 0;
     }
     
     .swiper-slide img {
@@ -1081,8 +1082,8 @@ section.bg-light {
 /* Small screen optimizations */
 @media (max-width: 480px) {
     .report-swiper {
-        height: calc(100vh - 150px);
-        min-height: 250px;
+        height: calc(100vh - 250px);
+        min-height: 350px;
         max-height: 500px;
     }
     

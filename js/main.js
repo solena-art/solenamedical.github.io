@@ -368,107 +368,107 @@ if (contactForm) {
  * Initialize report swiper
  */
 function initReportSwiper() {
-    try {
-        const swiperElement = document.querySelector('.report-swiper');
-        if (!swiperElement) return;
+    const reportSwiper = document.querySelector('.report-swiper');
+    if (!reportSwiper) return;
 
-        // Check if device is mobile
-        const isMobile = window.innerWidth <= 768;
+    const isMobile = window.innerWidth <= 768;
+    
+    const calculateHeight = () => {
+        const viewportHeight = window.innerHeight;
+        const offset = isMobile ? 250 : 400;
+        const height = Math.min(
+            Math.max(viewportHeight - offset, isMobile ? 350 : 500),
+            isMobile ? 500 : 800
+        );
+        reportSwiper.style.height = `${height}px`;
+    };
 
-        // Calculate optimal height based on viewport
-        const calculateHeight = () => {
-            const viewportHeight = window.innerHeight;
-            const offset = isMobile ? 200 : 300;
-            const height = Math.min(Math.max(viewportHeight - offset, 250), 800);
-            swiperElement.style.height = `${height}px`;
-        };
+    // Initial height calculation
+    calculateHeight();
 
-        // Initial height calculation
-        calculateHeight();
-
-        const swiper = new Swiper('.report-swiper', {
-            slidesPerView: 1,
-            spaceBetween: isMobile ? 10 : 30,
-            loop: true,
-            lazy: {
-                loadPrevNext: true,
-                loadPrevNextAmount: isMobile ? 1 : 2,
-                checkInView: true
-            },
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-                dynamicBullets: isMobile
-            },
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-            breakpoints: {
-                320: {
-                    slidesPerView: 1,
-                    spaceBetween: 10,
-                    allowTouchMove: true
-                },
-                768: {
-                    slidesPerView: 1,
-                    spaceBetween: 20,
-                    allowTouchMove: true
-                }
-            },
-            on: {
-                init: function() {
-                    console.log('Swiper initialized successfully');
-                    // Preload first image
-                    const firstSlide = this.slides[0];
-                    if (firstSlide) {
-                        const img = firstSlide.querySelector('img');
-                        if (img && img.dataset.src) {
-                            img.src = img.dataset.src;
-                        }
-                    }
-                },
-                error: function(error) {
-                    console.error('Swiper error:', error);
-                    swiperElement.innerHTML = 
-                        '<div class="alert alert-info">Please view this content on desktop for the best experience.</div>';
-                },
-                touchStart: function() {
-                    // Optimize touch handling
-                    this.params.speed = 300;
-                },
-                touchEnd: function() {
-                    // Reset speed after touch
-                    this.params.speed = 400;
-                }
-            }
-        });
-
-        // Handle resize events with debounce
-        let resizeTimeout;
-        window.addEventListener('resize', function() {
-            clearTimeout(resizeTimeout);
-            resizeTimeout = setTimeout(function() {
+    const swiper = new Swiper(reportSwiper, {
+        slidesPerView: 1,
+        spaceBetween: 0,
+        centeredSlides: true,
+        loop: false,
+        preloadImages: false,
+        lazy: {
+            loadPrevNext: true,
+            loadPrevNextAmount: 2,
+            loadOnTransitionStart: true
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+            dynamicBullets: isMobile
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        keyboard: {
+            enabled: true,
+            onlyInViewport: true
+        },
+        touchRatio: 1,
+        touchAngle: 45,
+        resistance: true,
+        resistanceRatio: 0.85,
+        watchSlidesProgress: true,
+        preventInteractionOnTransition: true,
+        on: {
+            init: function() {
                 calculateHeight();
-                swiper.update();
-            }, 250);
-        });
-
-        // Cleanup on page unload
-        window.addEventListener('beforeunload', function() {
-            if (swiper) {
-                swiper.destroy(true, true);
+                this.slides.forEach(slide => {
+                    const img = slide.querySelector('img');
+                    if (img) {
+                        img.style.opacity = '1';
+                    }
+                });
+            },
+            slideChange: function() {
+                this.slides.forEach(slide => {
+                    const img = slide.querySelector('img');
+                    if (img) {
+                        img.style.opacity = '1';
+                    }
+                });
+            },
+            touchStart: function() {
+                this.slides.forEach(slide => {
+                    const img = slide.querySelector('img');
+                    if (img) {
+                        img.style.transition = 'none';
+                    }
+                });
+            },
+            touchEnd: function() {
+                this.slides.forEach(slide => {
+                    const img = slide.querySelector('img');
+                    if (img) {
+                        img.style.transition = 'opacity 0.3s ease';
+                    }
+                });
             }
-        });
-
-    } catch (error) {
-        console.error('Failed to initialize swiper:', error);
-        const swiperElement = document.querySelector('.report-swiper');
-        if (swiperElement) {
-            swiperElement.innerHTML = 
-                '<div class="alert alert-info">Please view this content on desktop for the best experience.</div>';
         }
-    }
+    });
+
+    // Handle window resize with debounce
+    let resizeTimeout;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(() => {
+            calculateHeight();
+            swiper.update();
+        }, 250);
+    });
+
+    // Cleanup on page unload
+    window.addEventListener('beforeunload', () => {
+        if (swiper) {
+            swiper.destroy(true, true);
+        }
+    });
 }
 
 /**

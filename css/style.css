@@ -965,208 +965,146 @@ section.bg-light {
 
 /* Report Viewer Styles */
 .report-swiper {
-    width: 100%;
-    height: 80vh;
-    padding: 20px 0;
-    background: #f8f9fa;
-    border-radius: var(--border-radius);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    margin: 2rem auto;
+    max-width: 100%;
+    overflow: hidden;
+    margin: 0 auto;
     position: relative;
+    height: calc(100vh - 300px); /* Adjust height based on viewport */
+    min-height: 400px;
+    max-height: 800px;
 }
 
 .report-slide-content {
-    padding: 1rem;
-    text-align: center;
-    height: 100%;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
-}
-
-.report-preview {
-    width: 100%;
+    background: #f8f9fa;
     height: 100%;
-    overflow-y: auto;
-    padding: 1rem;
+    position: relative;
 }
 
-.report-preview img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-.report-swiper .swiper-button-next,
-.report-swiper .swiper-button-prev {
-    color: var(--primary-color);
-    background: rgba(255, 255, 255, 0.9);
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    transition: all var(--transition-normal);
-    z-index: 1000;
-}
-
-.report-swiper .swiper-button-next:hover,
-.report-swiper .swiper-button-prev:hover {
-    background: var(--primary-color);
-    color: white;
-    transform: scale(1.1);
-}
-
-.report-swiper .swiper-button-next:after,
-.report-swiper .swiper-button-prev:after {
-    font-size: 20px;
-}
-
-.report-swiper .swiper-pagination {
-    bottom: 10px;
-    z-index: 1000;
-}
-
-.report-swiper .swiper-pagination-bullet {
-    width: 10px;
-    height: 10px;
-    background: var(--primary-color);
-    opacity: 0.5;
-    transition: all var(--transition-normal);
-}
-
-.report-swiper .swiper-pagination-bullet:hover {
-    opacity: 0.8;
-}
-
-.report-swiper .swiper-pagination-bullet-active {
-    opacity: 1;
-    background: var(--primary-color);
-    transform: scale(1.2);
-}
-
-@media (max-width: 768px) {
-    .report-swiper {
-        height: 60vh;
-    }
-    
-    .report-preview {
-        max-width: 95%;
-    }
-    
-    .report-slide-content {
-        padding: 0.5rem;
-    }
-}
-
-/* Add zoom controls */
-.report-controls {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 1000;
+.swiper-slide {
     display: flex;
-    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    background: #f8f9fa;
+    overflow: hidden;
+    height: 100%;
 }
 
-.zoom-control {
-    background: white;
-    border: none;
+.swiper-slide img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.swiper-lazy-preloader {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #0d6efd;
     border-radius: 50%;
     width: 40px;
     height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    transition: all 0.3s ease;
-}
-
-.zoom-control:hover {
-    background: var(--primary-color);
-    color: white;
-}
-
-/* Sample Report Section */
-.sample-report-section {
-    padding: 3rem 0;
-    background: #f8f9fa;
-    position: relative;
-    overflow: hidden;
-}
-
-.sample-report-section::before {
-    content: '';
+    animation: spin 1s linear infinite;
     position: absolute;
-    top: -100px;
-    right: -100px;
-    width: 300px;
-    height: 300px;
-    border-radius: 50%;
-    background: radial-gradient(rgba(13, 110, 253, 0.05), transparent 70%);
-    z-index: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
-.sample-report-section h2 {
-    margin-bottom: 30px;
-    color: var(--dark-gray);
-    position: relative;
-}
-
-/* Content Spacing */
-.container {
-    max-width: 1200px;
-    padding: 0 1.5rem;
+@keyframes spin {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
 }
 
 /* Mobile Optimizations */
 @media (max-width: 768px) {
-    .container {
-        padding: 0 1rem;
-    }
-
-    section {
-        padding: 3rem 0;
-    }
-
     .report-swiper {
-        height: 50vh;
+        height: calc(100vh - 200px);
+        min-height: 300px;
+        max-height: 600px;
     }
-
-    .hero-section h1 span::after {
-        height: 6px;
+    
+    .report-slide-content {
+        min-height: auto;
     }
-
-    .partners-logo {
-        gap: 2rem;
+    
+    .swiper-slide img {
+        max-height: 100%;
+        width: auto;
     }
-
-    .partners-logo img {
-        max-width: 120px;
+    
+    .swiper-pagination {
+        bottom: 10px !important;
     }
-
-    .testimonial-card {
-        padding: 1.75rem;
+    
+    .swiper-pagination-bullet {
+        width: 8px;
+        height: 8px;
+        margin: 0 4px;
+    }
+    
+    .hero-section {
+        padding: 60px 0;
+        min-height: auto;
+    }
+    
+    .hero-section h1 {
+        font-size: 2rem;
+        line-height: 1.3;
+    }
+    
+    .hero-section .lead {
+        font-size: 1.1rem;
+    }
+    
+    .card {
         margin-bottom: 1rem;
     }
-
-    .testimonial-text {
-        font-size: 1rem;
-        line-height: 1.6;
+    
+    .card-body {
+        padding: 1.5rem;
     }
     
-    .testimonial-author-info h4 {
-        font-size: 1rem;
-    }
-
-    .trust-badge {
-        padding: 0.5rem 0.8rem;
-        min-width: 45%;
-        font-size: 0.9rem;
+    .navbar {
+        padding-top: 50px;
     }
     
-    .trust-badge i {
+    .language-dropdown {
+        top: 10px;
+        right: 10px;
+    }
+}
+
+/* Small screen optimizations */
+@media (max-width: 480px) {
+    .report-swiper {
+        height: calc(100vh - 150px);
+        min-height: 250px;
+        max-height: 500px;
+    }
+    
+    .swiper-slide img {
+        max-height: 50vh;
+    }
+    
+    .hero-section h1 {
+        font-size: 1.75rem;
+    }
+    
+    .hero-section .lead {
         font-size: 1rem;
+    }
+    
+    .card-body {
+        padding: 1.25rem;
+    }
+    
+    .btn {
+        width: 100%;
+        margin-bottom: 0.5rem;
     }
 }
 
@@ -1214,36 +1152,6 @@ section.bg-light {
 /* Medium screen sizes (tablets) */
 @media (max-width: 991px) and (min-width: 769px) {
     /* Your other tablet styles here */
-}
-
-/* Small screens (smaller phones) */
-@media (max-width: 480px) {
-    .trust-badge {
-        padding: 0.5rem 0.8rem;
-        min-width: 45%;
-        font-size: 0.9rem;
-    }
-    
-    .trust-badge i {
-        font-size: 1rem;
-    }
-
-    .testimonial-card {
-        padding: 1.5rem;
-    }
-    
-    .testimonial-text {
-        font-size: 0.95rem;
-    }
-}
-
-/* Optimize reveal animations for mobile */
-@media (max-width: 768px) {
-    .reveal {
-        opacity: 0.2;
-        transform: translateY(20px);
-        transition: all 0.6s ease;
-    }
 }
 
 /* Scroll to top button */

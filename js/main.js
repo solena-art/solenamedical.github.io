@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
     detectLanguage();
     initLanguageDropdown();
     fixNavigationDisplay();
+    initReportSwiper();
 });
 
 /**
@@ -363,160 +364,112 @@ if (contactForm) {
     });
 }
 
-// Initialize Swiper for report viewer
-document.addEventListener('DOMContentLoaded', function() {
-    // Check if we're on the services page
-    if (document.querySelector('.report-swiper')) {
-        console.log('Initializing report viewer...');
-        
-        const reportSwiper = new Swiper('.report-swiper', {
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
+/**
+ * Initialize report swiper
+ */
+function initReportSwiper() {
+    try {
+        const swiperElement = document.querySelector('.report-swiper');
+        if (!swiperElement) return;
+
+        // Check if device is mobile
+        const isMobile = window.innerWidth <= 768;
+
+        // Calculate optimal height based on viewport
+        const calculateHeight = () => {
+            const viewportHeight = window.innerHeight;
+            const offset = isMobile ? 200 : 300;
+            const height = Math.min(Math.max(viewportHeight - offset, 250), 800);
+            swiperElement.style.height = `${height}px`;
+        };
+
+        // Initial height calculation
+        calculateHeight();
+
+        const swiper = new Swiper('.report-swiper', {
+            slidesPerView: 1,
+            spaceBetween: isMobile ? 10 : 30,
+            loop: true,
+            lazy: {
+                loadPrevNext: true,
+                loadPrevNextAmount: isMobile ? 1 : 2,
+                checkInView: true
             },
             pagination: {
                 el: '.swiper-pagination',
                 clickable: true,
+                dynamicBullets: isMobile
             },
-            keyboard: {
-                enabled: true,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
             },
-            mousewheel: {
-                enabled: true,
-            },
-            effect: 'slide',
-            speed: 400,
-            spaceBetween: 30,
             breakpoints: {
                 320: {
                     slidesPerView: 1,
-                    spaceBetween: 20
+                    spaceBetween: 10,
+                    allowTouchMove: true
                 },
                 768: {
                     slidesPerView: 1,
-                    spaceBetween: 30
+                    spaceBetween: 20,
+                    allowTouchMove: true
+                }
+            },
+            on: {
+                init: function() {
+                    console.log('Swiper initialized successfully');
+                    // Preload first image
+                    const firstSlide = this.slides[0];
+                    if (firstSlide) {
+                        const img = firstSlide.querySelector('img');
+                        if (img && img.dataset.src) {
+                            img.src = img.dataset.src;
+                        }
+                    }
+                },
+                error: function(error) {
+                    console.error('Swiper error:', error);
+                    swiperElement.innerHTML = 
+                        '<div class="alert alert-info">Please view this content on desktop for the best experience.</div>';
+                },
+                touchStart: function() {
+                    // Optimize touch handling
+                    this.params.speed = 300;
+                },
+                touchEnd: function() {
+                    // Reset speed after touch
+                    this.params.speed = 400;
                 }
             }
         });
 
-        // Add report pages to swiper
-        const swiperWrapper = document.querySelector('.report-swiper .swiper-wrapper');
-        if (swiperWrapper) {
-            console.log('Adding report pages...');
-            
-            // Clear any existing slides
-            swiperWrapper.innerHTML = '';
-            
-            // Get current language
-            const currentLang = document.documentElement.lang;
-            
-            // Define report pages for each language
-            const reportPages = {
-                'en': Array.from({length: 53}, (_, i) => ({
-                    title: `Page ${i + 1}`,
-                    image: `assets/report/report-page-${String(i + 1).padStart(2, '0')}.png`
-                })),
-                'ko': Array.from({length: 53}, (_, i) => ({
-                    title: `페이지 ${i + 1}`,
-                    image: `../assets/report/report-page-${String(i + 1).padStart(2, '0')}.png`
-                })),
-                'ja': Array.from({length: 53}, (_, i) => ({
-                    title: `ページ ${i + 1}`,
-                    image: `../assets/report/report-page-${String(i + 1).padStart(2, '0')}.png`
-                })),
-                'de': Array.from({length: 53}, (_, i) => ({
-                    title: `Seite ${i + 1}`,
-                    image: `../assets/report/report-page-${String(i + 1).padStart(2, '0')}.png`
-                }))
-            };
-            
-            // Get pages for current language or default to English
-            const pages = reportPages[currentLang] || reportPages['en'];
-            
-            pages.forEach((page, index) => {
-                const slide = document.createElement('div');
-                slide.className = 'swiper-slide';
-                
-                const content = document.createElement('div');
-                content.className = 'report-slide-content';
-                content.innerHTML = `
-                    <h3 class="mb-4">${page.title}</h3>
-                    <div class="report-preview">
-                        <img src="${page.image}" alt="${page.title}" class="img-fluid">
-                    </div>
-                    <p class="mt-4 text-muted">${currentLang === 'en' ? 'Sample Report Page' : 
-                        currentLang === 'ko' ? '샘플 보고서 페이지' :
-                        currentLang === 'ja' ? 'サンプルレポートページ' :
-                        'Beispielberichtsseite'} ${index + 1}</p>
-                `;
-                
-                slide.appendChild(content);
-                swiperWrapper.appendChild(slide);
-            });
+        // Handle resize events with debounce
+        let resizeTimeout;
+        window.addEventListener('resize', function() {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(function() {
+                calculateHeight();
+                swiper.update();
+            }, 250);
+        });
 
-            // Add zoom controls
-            const controls = document.createElement('div');
-            controls.className = 'report-controls';
-            controls.innerHTML = `
-                <button class="zoom-control zoom-in" title="Zoom In">
-                    <i class="fas fa-search-plus"></i>
-                </button>
-                <button class="zoom-control zoom-out" title="Zoom Out">
-                    <i class="fas fa-search-minus"></i>
-                </button>
-                <button class="zoom-control zoom-reset" title="Reset Zoom">
-                    <i class="fas fa-undo"></i>
-                </button>
-            `;
-            document.querySelector('.report-swiper').appendChild(controls);
-
-            // Initialize zoom functionality
-            let currentZoom = 1;
-            const zoomStep = 0.2;
-            const maxZoom = 3;
-            const minZoom = 0.5;
-
-            function updateZoom() {
-                const activeSlide = document.querySelector('.swiper-slide-active .report-preview img');
-                if (activeSlide) {
-                    activeSlide.style.transform = `scale(${currentZoom})`;
-                    activeSlide.style.transition = 'transform 0.3s ease';
-                }
+        // Cleanup on page unload
+        window.addEventListener('beforeunload', function() {
+            if (swiper) {
+                swiper.destroy(true, true);
             }
+        });
 
-            document.querySelector('.zoom-in').addEventListener('click', () => {
-                if (currentZoom < maxZoom) {
-                    currentZoom += zoomStep;
-                    updateZoom();
-                }
-            });
-
-            document.querySelector('.zoom-out').addEventListener('click', () => {
-                if (currentZoom > minZoom) {
-                    currentZoom -= zoomStep;
-                    updateZoom();
-                }
-            });
-
-            document.querySelector('.zoom-reset').addEventListener('click', () => {
-                currentZoom = 1;
-                updateZoom();
-            });
-
-            // Reset zoom when changing slides
-            reportSwiper.on('slideChange', () => {
-                currentZoom = 1;
-                updateZoom();
-            });
-            
-            // Update swiper after adding slides
-            reportSwiper.update();
-            console.log('Report viewer initialized with', swiperWrapper.children.length, 'slides');
-        } else {
-            console.error('Could not find swiper wrapper element');
+    } catch (error) {
+        console.error('Failed to initialize swiper:', error);
+        const swiperElement = document.querySelector('.report-swiper');
+        if (swiperElement) {
+            swiperElement.innerHTML = 
+                '<div class="alert alert-info">Please view this content on desktop for the best experience.</div>';
         }
     }
-});
+}
 
 /**
  * Language dropdown functionality

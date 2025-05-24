@@ -73,29 +73,59 @@
                 <div class="col-lg-8">
                     <div class="card border-0 shadow-sm">
                         <div class="card-body p-4 p-md-5">
-                            <h2 class="h3 mb-4">お問い合わせフォーム</h2>
-                            <form id="contactForm">
-                                <div class="mb-3">
-                                    <label for="name" class="form-label">お名前</label>
-                                    <input type="text" class="form-control" id="name" required>
+                            <h2 class="h3 mb-4 text-center">グローバルな旅を始めましょう</h2>
+                            <p class="text-center text-muted mb-4">医療機器とグローバル市場の目標についてお知らせください。当社の専門家が国際的な成功への道をナビゲートいたします。</p>
+                            <form id="contactForm" action="https://formspree.io/f/xwpojgon" method="POST" class="needs-validation" novalidate>
+                                <input type="hidden" name="_subject" value="New Contact Form Submission">
+                                <input type="hidden" name="_captcha" value="false">
+                                <input type="text" name="_gotcha" style="display:none">
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label for="name" class="form-label">お名前</label>
+                                        <input type="text" class="form-control" id="name" name="name" required>
+                                        <div class="invalid-feedback">
+                                            お名前を入力してください。
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="email" class="form-label">メールアドレス</label>
+                                        <input type="email" class="form-control" id="email" name="email" required>
+                                        <div class="invalid-feedback">
+                                            有効なメールアドレスを入力してください。
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="company" class="form-label">会社名</label>
+                                        <input type="text" class="form-control" id="company" name="company" required>
+                                        <div class="invalid-feedback">
+                                            会社名を入力してください。
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="device" class="form-label">医療機器の種類</label>
+                                        <input type="text" class="form-control" id="device" name="device" required>
+                                        <div class="invalid-feedback">
+                                            医療機器の種類を入力してください。
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="markets" class="form-label">ターゲット市場</label>
+                                        <input type="text" class="form-control" id="markets" name="markets" placeholder="例：EU、米国、アジア" required>
+                                        <div class="invalid-feedback">
+                                            ターゲット市場を指定してください。
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="message" class="form-label">メッセージ</label>
+                                        <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                                        <div class="invalid-feedback">
+                                            メッセージを入力してください。
+                                        </div>
+                                    </div>
+                                    <div class="col-12 text-center">
+                                        <button type="submit" class="btn btn-primary btn-lg">メッセージを送信</button>
+                                    </div>
                                 </div>
-                                <div class="mb-3">
-                                    <label for="company" class="form-label">会社名</label>
-                                    <input type="text" class="form-control" id="company" required>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="email" class="form-label">メールアドレス</label>
-                                    <input type="email" class="form-control" id="email" required>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="phone" class="form-label">電話番号</label>
-                                    <input type="tel" class="form-control" id="phone">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="message" class="form-label">お問い合わせ内容</label>
-                                    <textarea class="form-control" id="message" rows="5" required></textarea>
-                                </div>
-                                <button type="submit" class="btn btn-primary btn-lg w-100">送信する</button>
                             </form>
                         </div>
                     </div>

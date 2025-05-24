@@ -114,46 +114,49 @@
                         <div class="card-body p-4 p-md-5">
                             <h2 class="h3 mb-4 text-center">Start Your Global Journey</h2>
                             <p class="text-center text-muted mb-4">Tell us about your medical device and global market objectives. Our experts will help you navigate the path to international success.</p>
-                            <form id="contactForm" class="needs-validation" novalidate>
+                            <form id="contactForm" action="https://formspree.io/f/xwpojgon" method="POST" class="needs-validation" novalidate>
+                                <input type="hidden" name="_subject" value="New Contact Form Submission">
+                                <input type="hidden" name="_captcha" value="false">
+                                <input type="text" name="_gotcha" style="display:none">
                                 <div class="row g-3">
                                     <div class="col-md-6">
                                         <label for="name" class="form-label">Name</label>
-                                        <input type="text" class="form-control" id="name" required>
+                                        <input type="text" class="form-control" id="name" name="name" required>
                                         <div class="invalid-feedback">
                                             Please provide your name.
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <label for="email" class="form-label">Email</label>
-                                        <input type="email" class="form-control" id="email" required>
+                                        <input type="email" class="form-control" id="email" name="email" required>
                                         <div class="invalid-feedback">
                                             Please provide a valid email address.
                                         </div>
                                     </div>
                                     <div class="col-12">
                                         <label for="company" class="form-label">Company</label>
-                                        <input type="text" class="form-control" id="company" required>
+                                        <input type="text" class="form-control" id="company" name="company" required>
                                         <div class="invalid-feedback">
                                             Please provide your company name.
                                         </div>
                                     </div>
                                     <div class="col-12">
                                         <label for="device" class="form-label">Medical Device Type</label>
-                                        <input type="text" class="form-control" id="device" required>
+                                        <input type="text" class="form-control" id="device" name="device" required>
                                         <div class="invalid-feedback">
                                             Please provide your medical device type.
                                         </div>
                                     </div>
                                     <div class="col-12">
                                         <label for="markets" class="form-label">Target Markets</label>
-                                        <input type="text" class="form-control" id="markets" placeholder="e.g., EU, US, Asia" required>
+                                        <input type="text" class="form-control" id="markets" name="markets" placeholder="e.g., EU, US, Asia" required>
                                         <div class="invalid-feedback">
                                             Please specify your target markets.
                                         </div>
                                     </div>
                                     <div class="col-12">
                                         <label for="message" class="form-label">Message</label>
-                                        <textarea class="form-control" id="message" rows="5" required></textarea>
+                                        <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
                                         <div class="invalid-feedback">
                                             Please provide your message.
                                         </div>

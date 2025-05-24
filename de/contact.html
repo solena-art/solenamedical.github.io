@@ -73,28 +73,59 @@
                 <div class="col-lg-8">
                     <div class="card border-0 shadow-sm">
                         <div class="card-body p-4">
-                            <form id="contactForm">
-                                <div class="mb-3">
-                                    <label for="name" class="form-label">Name</label>
-                                    <input type="text" class="form-control" id="name" required>
+                            <h2 class="h3 mb-4 text-center">Starten Sie Ihre globale Reise</h2>
+                            <p class="text-center text-muted mb-4">Teilen Sie uns Ihre Medizintechnik und globalen Marktziele mit. Unsere Experten helfen Ihnen auf dem Weg zum internationalen Erfolg.</p>
+                            <form id="contactForm" action="https://formspree.io/f/xwpojgon" method="POST" class="needs-validation" novalidate>
+                                <input type="hidden" name="_subject" value="New Contact Form Submission">
+                                <input type="hidden" name="_captcha" value="false">
+                                <input type="text" name="_gotcha" style="display:none">
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label for="name" class="form-label">Name</label>
+                                        <input type="text" class="form-control" id="name" name="name" required>
+                                        <div class="invalid-feedback">
+                                            Bitte geben Sie Ihren Namen ein.
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="email" class="form-label">E-Mail</label>
+                                        <input type="email" class="form-control" id="email" name="email" required>
+                                        <div class="invalid-feedback">
+                                            Bitte geben Sie eine gültige E-Mail-Adresse ein.
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="company" class="form-label">Unternehmen</label>
+                                        <input type="text" class="form-control" id="company" name="company" required>
+                                        <div class="invalid-feedback">
+                                            Bitte geben Sie Ihren Firmennamen ein.
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="device" class="form-label">Medizintechnik-Typ</label>
+                                        <input type="text" class="form-control" id="device" name="device" required>
+                                        <div class="invalid-feedback">
+                                            Bitte geben Sie den Typ Ihrer Medizintechnik ein.
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="markets" class="form-label">Zielmärkte</label>
+                                        <input type="text" class="form-control" id="markets" name="markets" placeholder="z.B. EU, USA, Asien" required>
+                                        <div class="invalid-feedback">
+                                            Bitte geben Sie Ihre Zielmärkte an.
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="message" class="form-label">Nachricht</label>
+                                        <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                                        <div class="invalid-feedback">
+                                            Bitte geben Sie Ihre Nachricht ein.
+                                        </div>
+                                    </div>
+                                    <div class="col-12 text-center">
+                                        <button type="submit" class="btn btn-primary btn-lg">Nachricht senden</button>
+                                    </div>
                                 </div>
-                                <div class="mb-3">
-                                    <label for="company" class="form-label">Firmenname</label>
-                                    <input type="text" class="form-control" id="company" required>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="email" class="form-label">E-Mail</label>
-                                    <input type="email" class="form-control" id="email" required>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="phone" class="form-label">Telefonnummer</label>
-                                    <input type="tel" class="form-control" id="phone">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="message" class="form-label">Nachricht</label>
-                                    <textarea class="form-control" id="message" rows="5" required></textarea>
-                                </div>
-                                <button type="submit" class="btn btn-primary btn-lg w-100">Absenden</button>
                             </form>
                         </div>
                     </div>

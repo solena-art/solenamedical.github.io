@@ -73,29 +73,59 @@
                 <div class="col-lg-8">
                     <div class="card border-0 shadow-sm">
                         <div class="card-body p-4 p-md-5">
-                            <h2 class="h3 mb-4">문의 양식</h2>
-                            <form id="contactForm">
-                                <div class="mb-3">
-                                    <label for="name" class="form-label">이름</label>
-                                    <input type="text" class="form-control" id="name" required>
+                            <h2 class="h3 mb-4 text-center">글로벌 여정을 시작하세요</h2>
+                            <p class="text-center text-muted mb-4">의료기기와 글로벌 시장 목표에 대해 알려주세요. 저희 전문가가 국제적 성공을 위한 길을 안내해 드리겠습니다.</p>
+                            <form id="contactForm" action="https://formspree.io/f/xwpojgon" method="POST" class="needs-validation" novalidate>
+                                <input type="hidden" name="_subject" value="New Contact Form Submission">
+                                <input type="hidden" name="_captcha" value="false">
+                                <input type="text" name="_gotcha" style="display:none">
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label for="name" class="form-label">이름</label>
+                                        <input type="text" class="form-control" id="name" name="name" required>
+                                        <div class="invalid-feedback">
+                                            이름을 입력해 주세요.
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="email" class="form-label">이메일</label>
+                                        <input type="email" class="form-control" id="email" name="email" required>
+                                        <div class="invalid-feedback">
+                                            유효한 이메일 주소를 입력해 주세요.
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="company" class="form-label">회사명</label>
+                                        <input type="text" class="form-control" id="company" name="company" required>
+                                        <div class="invalid-feedback">
+                                            회사명을 입력해 주세요.
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="device" class="form-label">의료기기 유형</label>
+                                        <input type="text" class="form-control" id="device" name="device" required>
+                                        <div class="invalid-feedback">
+                                            의료기기 유형을 입력해 주세요.
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="markets" class="form-label">목표 시장</label>
+                                        <input type="text" class="form-control" id="markets" name="markets" placeholder="예: EU, 미국, 아시아" required>
+                                        <div class="invalid-feedback">
+                                            목표 시장을 지정해 주세요.
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="message" class="form-label">메시지</label>
+                                        <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                                        <div class="invalid-feedback">
+                                            메시지를 입력해 주세요.
+                                        </div>
+                                    </div>
+                                    <div class="col-12 text-center">
+                                        <button type="submit" class="btn btn-primary btn-lg">메시지 보내기</button>
+                                    </div>
                                 </div>
-                                <div class="mb-3">
-                                    <label for="company" class="form-label">회사명</label>
-                                    <input type="text" class="form-control" id="company" required>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="email" class="form-label">이메일</label>
-                                    <input type="email" class="form-control" id="email" required>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="phone" class="form-label">전화번호</label>
-                                    <input type="tel" class="form-control" id="phone">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="message" class="form-label">문의 내용</label>
-                                    <textarea class="form-control" id="message" rows="5" required></textarea>
-                                </div>
-                                <button type="submit" class="btn btn-primary btn-lg w-100">문의하기</button>
                             </form>
                         </div>
                     </div>

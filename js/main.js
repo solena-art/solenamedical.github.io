@@ -314,22 +314,52 @@ window.addEventListener('resize', optimizeForMobile);
 // Form submission handling
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
+    contactForm.addEventListener('submit', async function(e) {
         e.preventDefault();
         
-        // Here you would typically handle the form submission
-        // For now, we'll just show a success message
-        const formData = new FormData(contactForm);
-        console.log('Form submitted with data:', Object.fromEntries(formData));
-        
-        // Show success message
-        const successMessage = document.createElement('div');
-        successMessage.className = 'alert alert-success mt-3';
-        successMessage.textContent = 'Thank you for your message. We will get back to you soon!';
-        contactForm.appendChild(successMessage);
-        
-        // Reset form
-        contactForm.reset();
+        if (!validateForm('contactForm')) {
+            return;
+        }
+
+        const submitButton = contactForm.querySelector('button[type="submit"]');
+        const originalButtonText = submitButton.textContent;
+        submitButton.disabled = true;
+        submitButton.textContent = 'Sending...';
+
+        try {
+            const formData = new FormData(contactForm);
+            const response = await fetch(contactForm.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+
+            const result = await response.json();
+
+            if (response.ok) {
+                // Show success message
+                const successMessage = document.createElement('div');
+                successMessage.className = 'alert alert-success mt-3';
+                successMessage.textContent = 'Thank you for your message. We will get back to you soon!';
+                contactForm.appendChild(successMessage);
+                
+                // Reset form
+                contactForm.reset();
+            } else {
+                throw new Error(result.error || 'Failed to send message');
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            const errorMessage = document.createElement('div');
+            errorMessage.className = 'alert alert-danger mt-3';
+            errorMessage.textContent = 'Sorry, there was an error sending your message. Please try again later.';
+            contactForm.appendChild(errorMessage);
+        } finally {
+            submitButton.disabled = false;
+            submitButton.textContent = originalButtonText;
+        }
     });
 }
 

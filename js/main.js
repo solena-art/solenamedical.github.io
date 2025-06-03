@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
     detectLanguage();
     initLanguageDropdown();
     fixNavigationDisplay();
+    initPDFViewer();
     
     // Wait for all resources to load before initializing Swiper
     window.addEventListener('load', function() {
@@ -569,5 +570,122 @@ function fixNavigationDisplay() {
     const navLinks = document.querySelectorAll('.nav-link');
     navLinks.forEach(link => {
         link.style.display = 'block';
+    });
+}
+
+// PDF Viewer Controls
+function initPDFViewer() {
+    const pdfContainer = document.querySelector('.pdf-viewer-container');
+    const pdfPagesWrapper = document.getElementById('pdfPagesWrapper');
+    const pagePreviewWrapper = document.getElementById('pagePreviewWrapper');
+    const zoomIn = document.getElementById('zoomIn');
+    const zoomOut = document.getElementById('zoomOut');
+    const zoomLevel = document.querySelector('.zoom-level');
+    const prevPage = document.getElementById('prevPage');
+    const nextPage = document.getElementById('nextPage');
+    const currentPage = document.getElementById('currentPage');
+    const totalPages = document.getElementById('totalPages');
+    const fullscreen = document.getElementById('fullscreen');
+    const download = document.getElementById('download');
+    const mobilePrevPage = document.getElementById('mobilePrevPage');
+    const mobileNextPage = document.getElementById('mobileNextPage');
+    const mobileZoom = document.getElementById('mobileZoom');
+
+    let currentZoom = 100;
+    let isFullscreen = false;
+
+    // Create PDF viewer iframe
+    const pdfViewer = document.createElement('iframe');
+    pdfViewer.src = 'images/Sample.pdf';
+    pdfViewer.className = 'pdf-viewer';
+    pdfViewer.title = 'Sample Report';
+    pdfViewer.allowFullscreen = true;
+    pdfViewer.loading = 'lazy';
+    pdfViewer.setAttribute('aria-label', 'Sample market intelligence report');
+    pdfViewer.setAttribute('role', 'document');
+    
+    // Replace the pages wrapper with the iframe
+    pdfPagesWrapper.parentNode.replaceChild(pdfViewer, pdfPagesWrapper);
+
+    // Zoom controls
+    function updateZoom(zoom) {
+        currentZoom = Math.max(50, Math.min(200, zoom));
+        zoomLevel.textContent = `${currentZoom}%`;
+        pdfViewer.style.transform = `scale(${currentZoom / 100})`;
+        pdfViewer.style.transformOrigin = 'center top';
+    }
+
+    // Event listeners
+    zoomIn?.addEventListener('click', () => updateZoom(currentZoom + 10));
+    zoomOut?.addEventListener('click', () => updateZoom(currentZoom - 10));
+    prevPage?.addEventListener('click', () => {
+        const current = parseInt(currentPage.textContent);
+        if (current > 1) {
+            currentPage.textContent = current - 1;
+            pdfViewer.contentWindow.postMessage({ type: 'page', page: current - 1 }, '*');
+        }
+    });
+    nextPage?.addEventListener('click', () => {
+        const current = parseInt(currentPage.textContent);
+        const total = parseInt(totalPages.textContent);
+        if (current < total) {
+            currentPage.textContent = current + 1;
+            pdfViewer.contentWindow.postMessage({ type: 'page', page: current + 1 }, '*');
+        }
+    });
+
+    // Fullscreen toggle
+    fullscreen?.addEventListener('click', () => {
+        isFullscreen = !isFullscreen;
+        pdfContainer.classList.toggle('fullscreen');
+        fullscreen.querySelector('i').classList.toggle('fa-expand');
+        fullscreen.querySelector('i').classList.toggle('fa-compress');
+    });
+
+    // Download PDF
+    download?.addEventListener('click', () => {
+        const link = document.createElement('a');
+        link.href = 'images/Sample.pdf';
+        link.download = 'Sample-Report.pdf';
+        link.click();
+    });
+
+    // Mobile controls
+    mobilePrevPage?.addEventListener('click', () => prevPage.click());
+    mobileNextPage?.addEventListener('click', () => nextPage.click());
+    mobileZoom?.addEventListener('click', () => {
+        if (currentZoom === 100) {
+            updateZoom(150);
+        } else if (currentZoom === 150) {
+            updateZoom(200);
+        } else {
+            updateZoom(100);
+        }
+    });
+
+    // Handle PDF load
+    pdfViewer.addEventListener('load', () => {
+        // Get total pages from PDF
+        pdfViewer.contentWindow.postMessage({ type: 'getTotalPages' }, '*');
+    });
+
+    // Listen for messages from PDF viewer
+    window.addEventListener('message', (event) => {
+        if (event.data.type === 'totalPages') {
+            totalPages.textContent = event.data.total;
+        }
+    });
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') {
+            prevPage.click();
+        } else if (e.key === 'ArrowRight') {
+            nextPage.click();
+        } else if (e.key === '+') {
+            updateZoom(currentZoom + 10);
+        } else if (e.key === '-') {
+            updateZoom(currentZoom - 10);
+        }
     });
 } 

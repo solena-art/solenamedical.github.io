@@ -1234,37 +1234,181 @@ section.bg-light {
 }
 
 /* PDF Viewer Styles */
-.pdf-container {
+.pdf-viewer-container {
     width: 100%;
-    height: 80vh;
+    max-width: 1200px;
     margin: 0 auto;
     border: 1px solid #ddd;
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    -webkit-overflow-scrolling: touch; /* Enable smooth scrolling on iOS */
+    background: #fff;
 }
 
-.pdf-viewer {
+.pdf-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+    background: #f8f9fa;
+    border-bottom: 1px solid #ddd;
+    position: relative;
+    z-index: 2;
+}
+
+.toolbar-left,
+.toolbar-center,
+.toolbar-right {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.toolbar-btn {
+    background: none;
+    border: none;
+    padding: 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    color: #666;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.toolbar-btn:hover {
+    background: #e9ecef;
+    color: #0d6efd;
+}
+
+.toolbar-btn:active {
+    background: #dee2e6;
+}
+
+.zoom-level {
+    font-size: 14px;
+    color: #666;
+    min-width: 60px;
+    text-align: center;
+}
+
+.page-info {
+    font-size: 14px;
+    color: #666;
+    margin: 0 12px;
+}
+
+.pdf-container {
+    width: 100%;
+    height: 85vh;
+    min-height: 800px;
+    max-height: 1200px;
+    position: relative;
+    background: #f8f9fa;
+    overflow: hidden;
+}
+
+.pdf-pages-container {
     width: 100%;
     height: 100%;
-    border: none;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
+    position: relative;
+}
+
+.pdf-pages-wrapper {
+    display: flex;
+    height: 100%;
+    transition: transform 0.3s ease;
+}
+
+.pdf-page {
+    flex: 0 0 100%;
+    height: 100%;
+    scroll-snap-align: start;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.pdf-page img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Page Preview Strip */
+.page-preview-strip {
+    width: 100%;
+    height: 100px;
+    background: #f8f9fa;
+    border-top: 1px solid #ddd;
+    overflow-x: auto;
+    overflow-y: hidden;
+    position: relative;
+}
+
+.page-preview-wrapper {
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+    height: 100%;
+}
+
+.page-preview {
+    flex: 0 0 80px;
+    height: 80px;
+    border: 2px solid transparent;
+    border-radius: 4px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.page-preview.active {
+    border-color: #0d6efd;
+}
+
+.page-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.page-preview:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 /* Mobile Optimizations */
 @media (max-width: 768px) {
-    .pdf-container {
-        height: 60vh;
-        margin: 0 -15px; /* Extend to full width on mobile */
+    .pdf-viewer-container {
+        margin: 0 -15px;
         border-radius: 0;
         border-left: none;
         border-right: none;
+        max-width: none;
     }
     
-    .pdf-viewer {
-        width: 100%;
-        height: 100%;
+    .pdf-container {
+        height: 60vh;
+        min-height: 400px;
+        max-height: 600px;
+    }
+
+    .page-preview-strip {
+        height: 80px;
+    }
+
+    .page-preview {
+        flex: 0 0 60px;
+        height: 60px;
     }
 }
 
@@ -1272,6 +1416,17 @@ section.bg-light {
 @media (max-width: 480px) {
     .pdf-container {
         height: 50vh;
+        min-height: 300px;
+        max-height: 500px;
+    }
+
+    .page-preview-strip {
+        height: 60px;
+    }
+
+    .page-preview {
+        flex: 0 0 50px;
+        height: 50px;
     }
 }
 
@@ -1279,5 +1434,26 @@ section.bg-light {
 @media (max-height: 500px) and (orientation: landscape) {
     .pdf-container {
         height: 70vh;
+        min-height: 300px;
+        max-height: 500px;
     }
+}
+
+/* Fullscreen mode */
+.pdf-viewer-container.fullscreen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+    margin: 0;
+    border-radius: 0;
+    max-width: none;
+}
+
+.pdf-viewer-container.fullscreen .pdf-container {
+    height: calc(100vh - 220px); /* Adjusted for preview strip */
+    min-height: none;
+    max-height: none;
 } 

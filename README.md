@@ -12,7 +12,7 @@ The website is structured as follows:
 - `/de/`: German version
 - `/css/`: Stylesheets
 - `/js/`: JavaScript files
-- `/images/`: Images and graphics
+- `/images/`: Images and graphics (including `__SOLENA_LOGO.png`)
 - `/templates/`: Component templates for site maintenance
 
 ## Template System

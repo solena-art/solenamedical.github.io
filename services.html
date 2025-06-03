@@ -32,7 +32,7 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
         <div class="container">
             <a class="navbar-brand" href="index.html">
-                <span class="fw-bold" style="font-size: 1.8rem; letter-spacing: 1px; color: #0d6efd;">SOLENA</span>
+                <img src="images/__SOLENA_LOGO.png" alt="SOLENA" class="logo-img" style="height: 40px;">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -126,19 +126,67 @@
         <div class="container">
             <h2 class="text-center mb-5">Experience Our Market Intelligence Excellence</h2>
             <p class="text-center text-muted mb-5">Explore our comprehensive market analysis capabilities through this sample report, showcasing our data-driven approach to market intelligence.</p>
-            <div class="pdf-container">
-                <iframe src="images/Sample.pdf" 
-                        class="pdf-viewer"
-                        title="Sample Report"
-                        allowfullscreen
-                        loading="lazy"
-                        aria-label="Sample market intelligence report"
-                        role="document">
-                </iframe>
+            
+            <div class="pdf-viewer-container">
+                <!-- PDF Viewer Toolbar -->
+                <div class="pdf-toolbar">
+                    <div class="toolbar-left">
+                        <button class="toolbar-btn" id="zoomOut" title="Zoom Out">
+                            <i class="fas fa-search-minus"></i>
+                        </button>
+                        <span class="zoom-level">100%</span>
+                        <button class="toolbar-btn" id="zoomIn" title="Zoom In">
+                            <i class="fas fa-search-plus"></i>
+                        </button>
+                    </div>
+                    <div class="toolbar-center">
+                        <button class="toolbar-btn" id="prevPage" title="Previous Page">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <span class="page-info">Page <span id="currentPage">1</span> of <span id="totalPages">1</span></span>
+                        <button class="toolbar-btn" id="nextPage" title="Next Page">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                    <div class="toolbar-right">
+                        <button class="toolbar-btn" id="fullscreen" title="Toggle Fullscreen">
+                            <i class="fas fa-expand"></i>
+                        </button>
+                        <button class="toolbar-btn" id="download" title="Download PDF">
+                            <i class="fas fa-download"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- PDF Viewer -->
+                <div class="pdf-container">
+                    <iframe src="images/Sample.pdf" 
+                            class="pdf-viewer"
+                            title="Sample Report"
+                            allowfullscreen
+                            loading="lazy"
+                            aria-label="Sample market intelligence report"
+                            role="document">
+                    </iframe>
+                </div>
+
+                <!-- Mobile Controls -->
+                <div class="mobile-controls d-md-none">
+                    <button class="mobile-btn" id="mobilePrevPage">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="mobile-btn" id="mobileZoom">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <button class="mobile-btn" id="mobileNextPage">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
             </div>
+
             <div class="text-center mt-4">
-                <p class="text-muted small">Scroll to navigate through the report</p>
-                <p class="text-muted small d-md-none">Pinch to zoom on mobile devices</p>
+                <p class="text-muted small">Use the toolbar above to navigate and zoom the report</p>
+                <p class="text-muted small d-md-none">Tap the buttons below to navigate on mobile</p>
             </div>
         </div>
     </section>

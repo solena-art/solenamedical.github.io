@@ -181,7 +181,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 ## Contact
 
 For any questions or concerns, please contact:
-- Email: worldmyview24@gmail.com
+- Email: info@solenamedical.com
 - GitHub Issues: [Create new issue](https://github.com/your-username/SOLENA/issues)
 
 ## Website Maintenance Guide
@@ -320,7 +320,7 @@ git push origin feature-name
 
 ## Contact
 For technical support or questions:
-- Email: worldmyview24@gmail.com
+- Email: info@solenamedical.com
 - GitHub Issues: [Create new issue](https://github.com/your-username/SOLENA/issues)
 
 ## License

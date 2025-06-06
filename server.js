@@ -13,7 +13,7 @@ app.use(express.static('.')); // Serve static files from current directory
 const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-        user: 'worldmyview24@gmail.com', // Your Gmail address
+        user: 'info@solenamedical.com', // Your Gmail address
         pass: process.env.EMAIL_PASSWORD // Your Gmail app password
     }
 });
@@ -25,8 +25,8 @@ app.post('/api/contact', async (req, res) => {
 
         // Email content
         const mailOptions = {
-            from: 'worldmyview24@gmail.com',
-            to: 'worldmyview24@gmail.com',
+            from: 'info@solenamedical.com',
+            to: 'info@solenamedical.com',
             subject: `New Contact Form Submission from ${name}`,
             html: `
                 <h2>New Contact Form Submission</h2>

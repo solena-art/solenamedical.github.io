@@ -30,7 +30,7 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
         <div class="container">
             <a class="navbar-brand" href="index.html">
-                <img src="/images/__SOLENA_LOGO.png" alt="SOLENA" class="logo-img" style="height: 40px;">
+                <img src="/images/__SOLENA_LOGO.png" alt="SOLENA" class="logo-img" style="height: 28px;">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -97,6 +97,7 @@
                             <form id="contactForm" action="https://formspree.io/f/xwpojgon" method="POST" class="needs-validation" novalidate>
                                 <input type="hidden" name="_subject" value="New Contact Form Submission">
                                 <input type="hidden" name="_captcha" value="false">
+                                <input type="hidden" name="_next" value="http://localhost:8000/confirmation.html">
                                 <input type="text" name="_gotcha" style="display:none">
                                 <div class="row g-3">
                                     <div class="col-md-6">
@@ -173,7 +174,7 @@
     <!-- Custom JS -->
     <script src="js/main.js"></script>
     <script>
-        // Form validation
+        // Form validation and submission handling
         (function () {
             'use strict'
             var forms = document.querySelectorAll('.needs-validation')
@@ -182,6 +183,27 @@
                     if (!form.checkValidity()) {
                         event.preventDefault()
                         event.stopPropagation()
+                    } else {
+                        event.preventDefault()
+                        // Submit the form using fetch
+                        fetch(form.action, {
+                            method: 'POST',
+                            body: new FormData(form),
+                            headers: {
+                                'Accept': 'application/json'
+                            }
+                        })
+                        .then(response => {
+                            if (response.ok) {
+                                window.location.href = 'confirmation.html'
+                            } else {
+                                throw new Error('Form submission failed')
+                            }
+                        })
+                        .catch(error => {
+                            console.error('Error:', error)
+                            alert('There was a problem submitting your form. Please try again.')
+                        })
                     }
                     form.classList.add('was-validated')
                 }, false)

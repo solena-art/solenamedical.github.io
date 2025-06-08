@@ -10,6 +10,18 @@ document.addEventListener('DOMContentLoaded', function() {
     initLanguageDropdown();
     fixNavigationDisplay();
     initPDFViewer();
+    initRevealAnimations();
+    
+    // Ensure preloader fades out
+    const preloader = document.querySelector('.preloader');
+    if (preloader) {
+        setTimeout(() => {
+            preloader.classList.add('fade-out');
+            setTimeout(() => {
+                preloader.style.display = 'none';
+            }, 300);
+        }, 2000);
+    }
     
     // Wait for all resources to load before initializing Swiper
     window.addEventListener('load', function() {
@@ -688,4 +700,30 @@ function initPDFViewer() {
             updateZoom(currentZoom - 10);
         }
     });
+}
+
+/**
+ * Initialize reveal animations
+ */
+function initRevealAnimations() {
+    const reveals = document.querySelectorAll('.reveal');
+    
+    function checkReveals() {
+        const windowHeight = window.innerHeight;
+        const revealPoint = 150;
+        
+        reveals.forEach(reveal => {
+            const revealTop = reveal.getBoundingClientRect().top;
+            
+            if (revealTop < windowHeight - revealPoint) {
+                reveal.classList.add('active');
+            }
+        });
+    }
+    
+    // Initial check
+    checkReveals();
+    
+    // Check on scroll
+    window.addEventListener('scroll', checkReveals);
 } 

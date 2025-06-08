@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kontakt - SOLENA</title>
+    <title>Kontakt - SOLENA AI Intelligence</title>
+    <meta name="description" content="Vereinbaren Sie eine Demo unserer KI-gestützten Intelligence-Plattform für die Medizintechnik- und Kosmetikindustrie.">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
@@ -13,18 +14,18 @@
 </head>
 <body>
     <!-- Language Selector -->
-<div class="language-dropdown">
-    <button class="language-toggle" aria-expanded="false" aria-haspopup="true" aria-label="Sprache auswählen">
-        <span class="active-language">DE</span>
-        <i class="fas fa-chevron-down ms-2"></i>
-    </button>
-    <div class="language-dropdown-content" role="menu">
-        <a href="../index.html" role="menuitem">English</a>
-        <a href="../ko/index.html" role="menuitem">한국어</a>
-        <a href="../ja/index.html" role="menuitem">日本語</a>
-        <a href="../de/index.html" class="active" role="menuitem" aria-current="page">Deutsch</a>
+    <div class="language-dropdown">
+        <button class="language-toggle" aria-expanded="false" aria-haspopup="true" aria-label="Sprache auswählen">
+            <span class="active-language">DE</span>
+            <i class="fas fa-chevron-down ms-2"></i>
+        </button>
+        <div class="language-dropdown-content" role="menu">
+            <a href="../index.html" role="menuitem">English</a>
+            <a href="../ko/index.html" role="menuitem">한국어</a>
+            <a href="../ja/index.html" role="menuitem">日本語</a>
+            <a href="index.html" class="active" role="menuitem" aria-current="page">Deutsch</a>
+        </div>
     </div>
-</div>  
 
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
@@ -32,7 +33,7 @@
             <a class="navbar-brand" href="index.html">
                 <img src="../images/__SOLENA_LOGO.png" alt="SOLENA" class="logo-img" style="height: 28px;">
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Navigation umschalten">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -55,79 +56,29 @@
     </nav>
 
     <!-- Contact Hero Section -->
-    <section class="hero-section">
+    <section class="contact-hero py-5">
         <div class="container">
-            <div class="row min-vh-100 align-items-center">
+            <div class="row align-items-center">
                 <div class="col-lg-8">
-                    <h1 class="display-4 fw-bold mb-4">Kontakt</h1>
-                    <p class="lead mb-4">Lassen Sie uns über Ihren Einstieg in den globalen Medizintechnikmarkt sprechen</p>
+                    <h1 class="display-4 fw-bold mb-4">Transformieren Sie Ihr Unternehmen mit KI</h1>
+                    <p class="lead mb-4">Vereinbaren Sie eine Demo, um zu sehen, wie unsere KI-Plattform Ihren Erfolg in Vertrieb, Marketing und regulatorischen Angelegenheiten vorantreiben kann.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Form Section -->
+    <!-- Contact Information Section -->
     <section class="py-5 bg-light">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="card border-0 shadow-sm">
-                        <div class="card-body p-4">
-                            <h2 class="h3 mb-4 text-center">Starten Sie Ihre globale Reise</h2>
-                            <p class="text-center text-muted mb-4">Teilen Sie uns Ihre Medizintechnik und globalen Marktziele mit. Unsere Experten helfen Ihnen auf dem Weg zum internationalen Erfolg.</p>
-                            <form id="contactForm" action="https://formspree.io/f/xwpojgon" method="POST" class="needs-validation" novalidate>
-                                <input type="hidden" name="_subject" value="New Contact Form Submission">
-                                <input type="hidden" name="_captcha" value="false">
-                                <input type="hidden" name="_next" value="http://localhost:8000/de/confirmation.html">
-                                <input type="text" name="_gotcha" style="display:none">
-                                <div class="row g-3">
-                                    <div class="col-md-6">
-                                        <label for="name" class="form-label">Name</label>
-                                        <input type="text" class="form-control" id="name" name="name" required>
-                                        <div class="invalid-feedback">
-                                            Bitte geben Sie Ihren Namen ein.
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label for="email" class="form-label">E-Mail</label>
-                                        <input type="email" class="form-control" id="email" name="email" required>
-                                        <div class="invalid-feedback">
-                                            Bitte geben Sie eine gültige E-Mail-Adresse ein.
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <label for="company" class="form-label">Unternehmen</label>
-                                        <input type="text" class="form-control" id="company" name="company" required>
-                                        <div class="invalid-feedback">
-                                            Bitte geben Sie Ihren Firmennamen ein.
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <label for="device" class="form-label">Medizintechnik-Typ</label>
-                                        <input type="text" class="form-control" id="device" name="device" required>
-                                        <div class="invalid-feedback">
-                                            Bitte geben Sie den Typ Ihrer Medizintechnik ein.
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <label for="markets" class="form-label">Zielmärkte</label>
-                                        <input type="text" class="form-control" id="markets" name="markets" placeholder="z.B. EU, USA, Asien" required>
-                                        <div class="invalid-feedback">
-                                            Bitte geben Sie Ihre Zielmärkte an.
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <label for="message" class="form-label">Nachricht</label>
-                                        <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
-                                        <div class="invalid-feedback">
-                                            Bitte geben Sie Ihre Nachricht ein.
-                                        </div>
-                                    </div>
-                                    <div class="col-12 text-center">
-                                        <button type="submit" class="btn btn-primary btn-lg">Nachricht senden</button>
-                                    </div>
-                                </div>
-                            </form>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center">
+                            <i class="fas fa-envelope fa-3x text-primary mb-3"></i>
+                            <h3 class="h5">E-Mail-Kontakt</h3>
+                            <p class="text-muted mb-0">
+                                <a href="mailto:info@solenamedical.com" class="text-decoration-none">info@solenamedical.com</a>
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -135,12 +86,131 @@
         </div>
     </section>
 
-    <!-- Contact Info Section -->
-    <section class="py-5">
-        <div class="container text-center">
-            <h2 class="h3 mb-4">Direkter Kontakt</h2>
-            <p class="lead mb-4">Für weitere Informationen kontaktieren Sie uns bitte unter:</p>
-            <a href="mailto:info@solenamedical.com" class="btn btn-outline-primary btn-lg">info@solenamedical.com</a>
+    <!-- Contact Form Section -->
+    <section class="contact-form py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <h2 class="mb-4">Demo anfordern</h2>
+                    <form id="demoForm" class="needs-validation" novalidate>
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Vollständiger Name</label>
+                            <input type="text" class="form-control" id="name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="company" class="form-label">Unternehmen</label>
+                            <input type="text" class="form-control" id="company" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Geschäfts-E-Mail</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="phone" class="form-label">Telefonnummer</label>
+                            <input type="tel" class="form-control" id="phone">
+                        </div>
+                        <div class="mb-3">
+                            <label for="industry" class="form-label">Branche</label>
+                            <select class="form-select" id="industry" required>
+                                <option value="">Wählen Sie Ihre Branche</option>
+                                <option value="cosmetics">Kosmetik</option>
+                                <option value="diagnostics">Diagnostik</option>
+                                <option value="medtech">Medizintechnik</option>
+                                <option value="other">Andere</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="interest" class="form-label">Interessensgebiete</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="sales" id="sales">
+                                <label class="form-check-label" for="sales">Vertriebs-Intelligence</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="marketing" id="marketing">
+                                <label class="form-check-label" for="marketing">Marketing-Intelligence</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="regulatory" id="regulatory">
+                                <label class="form-check-label" for="regulatory">Regulatorische Intelligence</label>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Zusätzliche Informationen</label>
+                            <textarea class="form-control" id="message" rows="4"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Demo vereinbaren</button>
+                    </form>
+                </div>
+                <div class="col-lg-6">
+                    <div class="contact-info">
+                        <h2 class="mb-4">Warum SOLENA?</h2>
+                        <div class="info-card mb-4">
+                            <i class="fas fa-robot"></i>
+                            <h3>Fortschrittliche KI-Technologie</h3>
+                            <p>Unsere proprietäre KI-Plattform kombiniert maschinelles Lernen, NLP und prädiktive Analysen, um umsetzbare Erkenntnisse zu liefern.</p>
+                        </div>
+                        <div class="info-card mb-4">
+                            <i class="fas fa-shield-alt"></i>
+                            <h3>Compliance-First-Ansatz</h3>
+                            <p>HIPAA- und DSGVO-konforme Infrastruktur mit SOC 2 Typ II-Zertifizierung für Datensicherheit.</p>
+                        </div>
+                        <div class="info-card">
+                            <i class="fas fa-chart-line"></i>
+                            <h3>Nachgewiesene Ergebnisse</h3>
+                            <p>Schließen Sie sich führenden Herstellern von Medizintechnik und Kosmetik an, die ihr Geschäft mit unseren KI-Lösungen transformiert haben.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Häufig gestellte Fragen</h2>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="accordion" id="faqAccordion">
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                    Wie funktioniert Ihre KI-Plattform?
+                                </button>
+                            </h3>
+                            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Unsere Plattform nutzt fortschrittliche KI-Algorithmen, um Daten aus mehreren Quellen zu analysieren und handlungsorientierte Einblicke für Vertrieb, Marketing und regulatorische Entscheidungen zu liefern. Das System lernt kontinuierlich und verbessert sich auf der Grundlage neuer Daten und Ergebnisse.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                    Welche Art von Daten verarbeiten Sie?
+                                </button>
+                            </h3>
+                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Wir verarbeiten verschiedene Arten von Daten, einschließlich Verkaufsunterlagen, Marketingkampagnenergebnissen, Verbraucherverhalten, regulatorischen Dokumenten und Markttrends. Die gesamte Datenverarbeitung entspricht den einschlägigen Datenschutzbestimmungen.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                    Wie lange dauert die Implementierung?
+                                </button>
+                            </h3>
+                            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Die Implementierung dauert in der Regel 4-6 Wochen, abhängig von Ihren spezifischen Anforderungen und Datenintegrationsanforderungen. Wir bieten umfassende Unterstützung während des gesamten Prozesses.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -148,11 +218,20 @@
     <footer class="bg-dark text-light py-4">
         <div class="container">
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-4">
                     <h5>SOLENA</h5>
-                    <p>Wir unterstützen Medizintechnikhersteller beim globalen Erfolg.</p>
+                    <p>Hersteller von Medizintechnik, Gesundheitsprodukten und Kosmetika weltweit zum Erfolg verhelfen.</p>
                 </div>
-                <div class="col-md-6 text-md-end">
+                <div class="col-md-4">
+                    <h5>Schnelllinks</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html">Startseite</a></li>
+                        <li><a href="about.html">Über uns</a></li>
+                        <li><a href="services.html">Dienstleistungen</a></li>
+                        <li><a href="contact.html">Kontakt</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 text-md-end">
                     <p>Kontakt: <a href="mailto:info@solenamedical.com" class="text-light">info@solenamedical.com</a></p>
                 </div>
             </div>
@@ -163,5 +242,21 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Custom JS -->
     <script src="../js/main.js"></script>
+    <script>
+        // Form validation and submission handling
+        (function () {
+            'use strict'
+            var forms = document.querySelectorAll('.needs-validation')
+            Array.prototype.slice.call(forms).forEach(function (form) {
+                form.addEventListener('submit', function (event) {
+                    if (!form.checkValidity()) {
+                        event.preventDefault()
+                        event.stopPropagation()
+                    }
+                    form.classList.add('was-validated')
+                }, false)
+            })
+        })()
+    </script>
 </body>
 </html> 

@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - SOLENA</title>
+    <title>Contact Us - SOLENA AI Intelligence</title>
+    <meta name="description" content="Get in touch with SOLENA to schedule a demo of our AI-driven intelligence platform for the medtech and cosmetics industries.">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
@@ -19,10 +20,8 @@
         <i class="fas fa-chevron-down ms-2"></i>
     </button>
     <div class="language-dropdown-content" role="menu">
-        <a href="index.html" class="active" role="menuitem" aria-current="page">English</a>
-        <a href="ko/index.html" role="menuitem">한국어</a>
-        <a href="ja/index.html" role="menuitem">日本語</a>
-        <a href="de/index.html" role="menuitem">Deutsch</a>
+        <a href="contact.html" class="active" role="menuitem" aria-current="page">English</a>
+        <a href="ko/contact.html" role="menuitem">한국어</a>
     </div>
 </div>   
 
@@ -30,7 +29,7 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
         <div class="container">
             <a class="navbar-brand" href="index.html">
-                <img src="/images/__SOLENA_LOGO.png" alt="SOLENA" class="logo-img" style="height: 28px;">
+                <img src="images/__SOLENA_LOGO.png" alt="SOLENA" class="logo-img" style="height: 28px;">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -55,12 +54,12 @@
     </nav>
 
     <!-- Contact Hero Section -->
-    <section class="hero-section">
+    <section class="contact-hero py-5">
         <div class="container">
-            <div class="row min-vh-100 align-items-center">
+            <div class="row align-items-center">
                 <div class="col-lg-8">
-                    <h1 class="display-4 fw-bold mb-4">Contact Us</h1>
-                    <p class="lead mb-4">Connect with our team of medical device market access experts to discuss your global expansion strategy.</p>
+                    <h1 class="display-4 fw-bold mb-4">Transform Your Business with AI</h1>
+                    <p class="lead mb-4">Schedule a demo to see how our AI platform can drive your success in sales, marketing, and regulatory affairs.</p>
                 </div>
             </div>
         </div>
@@ -86,67 +85,153 @@
     </section>
 
     <!-- Contact Form Section -->
-    <section class="py-5">
+    <section class="contact-form py-5">
         <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="card border-0 shadow-sm">
-                        <div class="card-body p-4 p-md-5">
-                            <h2 class="h3 mb-4 text-center">Start Your Global Journey</h2>
-                            <p class="text-center text-muted mb-4">Tell us about your medical device and global market objectives. Our experts will help you navigate the path to international success.</p>
-                            <form id="contactForm" action="https://formspree.io/f/xwpojgon" method="POST" class="needs-validation" novalidate>
-                                <input type="hidden" name="_subject" value="New Contact Form Submission">
-                                <input type="hidden" name="_captcha" value="false">
-                                <input type="hidden" name="_next" value="http://localhost:8000/confirmation.html">
-                                <input type="text" name="_gotcha" style="display:none">
-                                <div class="row g-3">
-                                    <div class="col-md-6">
-                                        <label for="name" class="form-label">Name</label>
-                                        <input type="text" class="form-control" id="name" name="name" required>
-                                        <div class="invalid-feedback">
-                                            Please provide your name.
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label for="email" class="form-label">Email</label>
-                                        <input type="email" class="form-control" id="email" name="email" required>
-                                        <div class="invalid-feedback">
-                                            Please provide a valid email address.
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <label for="company" class="form-label">Company</label>
-                                        <input type="text" class="form-control" id="company" name="company" required>
-                                        <div class="invalid-feedback">
-                                            Please provide your company name.
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <label for="device" class="form-label">Medical Device Type</label>
-                                        <input type="text" class="form-control" id="device" name="device" required>
-                                        <div class="invalid-feedback">
-                                            Please provide your medical device type.
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <label for="markets" class="form-label">Target Markets</label>
-                                        <input type="text" class="form-control" id="markets" name="markets" placeholder="e.g., EU, US, Asia" required>
-                                        <div class="invalid-feedback">
-                                            Please specify your target markets.
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <label for="message" class="form-label">Message</label>
-                                        <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
-                                        <div class="invalid-feedback">
-                                            Please provide your message.
-                                        </div>
-                                    </div>
-                                    <div class="col-12 text-center">
-                                        <button type="submit" class="btn btn-primary btn-lg">Send Message</button>
-                                    </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <h2 class="mb-4">Request a Demo</h2>
+                    <div class="alert alert-info mb-4">
+                        <i class="fas fa-info-circle me-2"></i>
+                        <strong>Important Notice:</strong> Our services are currently not available to EU/EEA residents due to regulatory requirements. If you are based in the EU/EEA, please check back for future availability or contact our authorized EU vendors.
+                    </div>
+                    <form id="demoForm" class="needs-validation" action="https://formspree.io/f/xwpojgon" method="POST" novalidate>
+                        <input type="hidden" name="_subject" value="New Demo Request from SOLENA Website">
+                        <input type="hidden" name="_next" value="http://localhost:3002/confirmation.html">
+                        <input type="hidden" name="_template" value="table">
+                        <input type="hidden" name="_language" value="en">
+                        <input type="hidden" name="_autoresponse" value="Thank you for your interest in SOLENA. We have received your demo request and will contact you shortly.">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Full Name</label>
+                            <input type="text" class="form-control" id="name" name="name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="company" class="form-label">Company Name</label>
+                            <input type="text" class="form-control" id="company" name="company" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Work Email</label>
+                            <input type="email" class="form-control" id="email" name="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="phone" class="form-label">Phone Number</label>
+                            <input type="tel" class="form-control" id="phone" name="phone">
+                        </div>
+                        <div class="mb-3">
+                            <label for="industry" class="form-label">Industry</label>
+                            <select class="form-select" id="industry" name="industry" required>
+                                <option value="">Select your industry</option>
+                                <option value="cosmetics">Cosmetics</option>
+                                <option value="diagnostics">Diagnostics</option>
+                                <option value="medtech">Medtech</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="interest" class="form-label">Areas of Interest</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="sales" id="sales" name="interests[]">
+                                <label class="form-check-label" for="sales">Sales Intelligence</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="marketing" id="marketing" name="interests[]">
+                                <label class="form-check-label" for="marketing">Marketing Intelligence</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="regulatory" id="regulatory" name="interests[]">
+                                <label class="form-check-label" for="regulatory">Regulatory Intelligence</label>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Additional Information</label>
+                            <textarea class="form-control" id="message" name="message" rows="4"></textarea>
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="termsCheck" name="terms" required>
+                            <label class="form-check-label" for="termsCheck">
+                                I have read and agree to the <a href="terms.html" target="_blank">Terms of Service</a>
+                            </label>
+                            <div class="invalid-feedback">
+                                You must agree to the Terms of Service to submit this form.
+                            </div>
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="euCheck" name="eu_confirmation" required>
+                            <label class="form-check-label" for="euCheck">
+                                I confirm that I am not a resident of the EU/EEA
+                            </label>
+                            <div class="invalid-feedback">
+                                You must confirm that you are not an EU/EEA resident to submit this form.
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Schedule Demo</button>
+                    </form>
+                </div>
+                <div class="col-lg-6">
+                    <div class="contact-info">
+                        <h2 class="mb-4">Why Choose SOLENA?</h2>
+                        <div class="info-card mb-4">
+                            <i class="fas fa-robot"></i>
+                            <h3>Advanced AI Technology</h3>
+                            <p>Our proprietary AI platform combines machine learning, NLP, and predictive analytics to deliver actionable insights.</p>
+                        </div>
+                        <div class="info-card mb-4">
+                            <i class="fas fa-shield-alt"></i>
+                            <h3>Compliance-First Approach</h3>
+                            <p>HIPAA and GDPR compliant infrastructure with SOC 2 Type II certification for data security.</p>
+                        </div>
+                        <div class="info-card">
+                            <i class="fas fa-chart-line"></i>
+                            <h3>Proven Results</h3>
+                            <p>Join leading healthcare and cosmetics manufacturers who have transformed their business with our AI solutions.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Frequently Asked Questions</h2>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="accordion" id="faqAccordion">
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                    How does your AI platform work?
+                                </button>
+                            </h3>
+                            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Our platform uses advanced AI algorithms to analyze data from multiple sources, providing actionable insights for sales, marketing, and regulatory decisions. The system continuously learns and improves based on new data and outcomes.
                                 </div>
-                            </form>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                    What kind of data do you process?
+                                </button>
+                            </h3>
+                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    We process various types of data including sales records, marketing campaign results, consumer behavior, regulatory documents, and market trends. All data processing complies with relevant privacy regulations.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                    How long does implementation take?
+                                </button>
+                            </h3>
+                            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Implementation typically takes 4-6 weeks, depending on your specific needs and data integration requirements. We provide comprehensive support throughout the process.
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -158,12 +243,24 @@
     <footer class="bg-dark text-light py-4">
         <div class="container">
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-4">
                     <h5>SOLENA</h5>
-                    <p>Empowering medical device manufacturers to succeed globally.</p>
+                    <p>Empowering Medtech, Healthcare and Cosmetics manufacturers to succeed globally.</p>
                 </div>
-                <div class="col-md-6 text-md-end">
+                <div class="col-md-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 text-md-end">
                     <p>Contact us: <a href="mailto:info@solenamedical.com" class="text-light">info@solenamedical.com</a></p>
+                    <p class="small mb-0">
+                        <a href="terms.html" class="text-light">Terms of Service</a>
+                    </p>
                 </div>
             </div>
         </div>
@@ -172,43 +269,22 @@
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Custom JS -->
-    <script src="js/main.js"></script>
     <script>
-        // Form validation and submission handling
-        (function () {
-            'use strict'
-            var forms = document.querySelectorAll('.needs-validation')
-            Array.prototype.slice.call(forms).forEach(function (form) {
-                form.addEventListener('submit', function (event) {
-                    if (!form.checkValidity()) {
-                        event.preventDefault()
-                        event.stopPropagation()
-                    } else {
-                        event.preventDefault()
-                        // Submit the form using fetch
-                        fetch(form.action, {
-                            method: 'POST',
-                            body: new FormData(form),
-                            headers: {
-                                'Accept': 'application/json'
-                            }
-                        })
-                        .then(response => {
-                            if (response.ok) {
-                                window.location.href = 'confirmation.html'
-                            } else {
-                                throw new Error('Form submission failed')
-                            }
-                        })
-                        .catch(error => {
-                            console.error('Error:', error)
-                            alert('There was a problem submitting your form. Please try again.')
-                        })
-                    }
-                    form.classList.add('was-validated')
-                }, false)
-            })
-        })()
+        // Form validation and submission
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('demoForm');
+            
+            form.addEventListener('submit', function(event) {
+                if (!form.checkValidity()) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                    form.classList.add('was-validated');
+                    return;
+                }
+                // Let Formspree handle the submission
+                // No need for additional JavaScript as Formspree will handle the redirect
+            });
+        });
     </script>
 </body>
 </html> 

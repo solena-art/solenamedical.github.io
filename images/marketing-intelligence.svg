@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Background Circle -->
+    <circle cx="60" cy="60" r="54" fill="#F8F9FA"/>
+    
+    <!-- Target Elements -->
+    <circle cx="60" cy="60" r="40" stroke="#0D6EFD" stroke-width="2" fill="none"/>
+    <circle cx="60" cy="60" r="30" stroke="#0D6EFD" stroke-width="2" fill="none"/>
+    <circle cx="60" cy="60" r="20" stroke="#0D6EFD" stroke-width="2" fill="none"/>
+    <circle cx="60" cy="60" r="10" fill="#0D6EFD"/>
+    
+    <!-- Data Points -->
+    <circle cx="40" cy="40" r="4" fill="#0D6EFD"/>
+    <circle cx="80" cy="40" r="4" fill="#0D6EFD"/>
+    <circle cx="40" cy="80" r="4" fill="#0D6EFD"/>
+    <circle cx="80" cy="80" r="4" fill="#0D6EFD"/>
+    
+    <!-- Connection Lines -->
+    <path d="M40 40L60 60" stroke="#0D6EFD" stroke-width="2" stroke-dasharray="4 4"/>
+    <path d="M80 40L60 60" stroke="#0D6EFD" stroke-width="2" stroke-dasharray="4 4"/>
+    <path d="M40 80L60 60" stroke="#0D6EFD" stroke-width="2" stroke-dasharray="4 4"/>
+    <path d="M80 80L60 60" stroke="#0D6EFD" stroke-width="2" stroke-dasharray="4 4"/>
+</svg> 

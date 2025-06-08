@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+    <!-- Background -->
+    <rect width="800" height="600" fill="#f8f9fa"/>
+    
+    <!-- AI Brain Network -->
+    <g transform="translate(400,300)">
+        <!-- Central Node -->
+        <circle cx="0" cy="0" r="50" fill="#0D6EFD" opacity="0.1"/>
+        <circle cx="0" cy="0" r="30" fill="#0D6EFD" opacity="0.2"/>
+        <circle cx="0" cy="0" r="15" fill="#0D6EFD"/>
+        
+        <!-- Connected Nodes -->
+        <g>
+            <circle cx="-150" cy="-100" r="30" fill="#0D6EFD" opacity="0.1"/>
+            <circle cx="150" cy="-100" r="30" fill="#0D6EFD" opacity="0.1"/>
+            <circle cx="-150" cy="100" r="30" fill="#0D6EFD" opacity="0.1"/>
+            <circle cx="150" cy="100" r="30" fill="#0D6EFD" opacity="0.1"/>
+            
+            <!-- Connection Lines -->
+            <line x1="0" y1="0" x2="-150" y2="-100" stroke="#0D6EFD" stroke-width="2" opacity="0.3"/>
+            <line x1="0" y1="0" x2="150" y2="-100" stroke="#0D6EFD" stroke-width="2" opacity="0.3"/>
+            <line x1="0" y1="0" x2="-150" y2="100" stroke="#0D6EFD" stroke-width="2" opacity="0.3"/>
+            <line x1="0" y1="0" x2="150" y2="100" stroke="#0D6EFD" stroke-width="2" opacity="0.3"/>
+        </g>
+        
+        <!-- Data Points -->
+        <g>
+            <circle cx="-200" cy="-150" r="5" fill="#0D6EFD"/>
+            <circle cx="200" cy="-150" r="5" fill="#0D6EFD"/>
+            <circle cx="-200" cy="150" r="5" fill="#0D6EFD"/>
+            <circle cx="200" cy="150" r="5" fill="#0D6EFD"/>
+        </g>
+    </g>
+</svg> 

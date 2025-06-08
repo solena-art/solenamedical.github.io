@@ -1,8 +1,8 @@
 :root {
-    --primary-color: #0056b3;
+    --primary-color: #0D6EFD;
     --primary-light: rgba(13, 110, 253, 0.1);
     --primary-dark: #004494;
-    --secondary-color: #495057;
+    --secondary-color: #6C757D;
     --light-gray: #f8f9fa;
     --dark-gray: #212529;
     --text-color: #212529;
@@ -14,6 +14,8 @@
     --transition-slow: 0.5s ease;
     --box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
     --animation-distance: 30px;
+    --light-bg: #F8F9FA;
+    --dark-bg: #212529;
 }
 
 body {
@@ -21,6 +23,7 @@ body {
     color: var(--text-color);
     line-height: 1.6;
     background-color: #ffffff;
+    padding-top: 76px; /* Height of navbar + some extra space */
 }
 
 /* Accessibility Improvements */
@@ -53,7 +56,7 @@ a:focus, button:focus, input:focus, textarea:focus, select:focus {
     transition: all var(--transition-normal);
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
     display: block;
-    padding-top: 60px;
+    padding-top: 1rem;
 }
 
 #navbarNav {
@@ -286,25 +289,27 @@ a:focus, button:focus, input:focus, textarea:focus, select:focus {
     flex-wrap: wrap;
     gap: 1rem;
     margin-top: 2rem;
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 0.8s ease 0.6s forwards;
 }
 
 .trust-badge {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    background: white;
-    padding: 0.75rem 1rem;
-    border-radius: 50px;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
-    transition: transform var(--transition-normal);
+    padding: 0.5rem 1rem;
+    background: var(--primary-light);
+    border-radius: var(--border-radius);
+    color: var(--primary-color);
+    font-weight: 500;
+    transition: all var(--transition-normal);
+}
+
+.trust-badge:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--box-shadow);
 }
 
 .trust-badge i {
-    color: var(--primary-color);
-    font-size: 1.2rem;
+    font-size: 1.25rem;
 }
 
 /* Cards */
@@ -403,7 +408,7 @@ a:focus, button:focus, input:focus, textarea:focus, select:focus {
 .btn-primary {
     background-color: var(--primary-color);
     border-color: var(--primary-color);
-    padding: 0.75rem 2rem;
+    padding: 0.75rem 1.5rem;
     font-weight: 500;
 }
 
@@ -416,8 +421,9 @@ a:focus, button:focus, input:focus, textarea:focus, select:focus {
 
 .btn-outline-primary {
     color: var(--primary-color);
-    border: 2px solid var(--primary-color);
-    background: transparent;
+    border-color: var(--primary-color);
+    padding: 0.75rem 1.5rem;
+    font-weight: 500;
 }
 
 .btn-outline-primary:hover {
@@ -668,17 +674,13 @@ footer a:hover::after {
 
 /* Form Styles */
 .form-control {
-    border: 1px solid #ced4da;
     padding: 0.75rem 1rem;
-    border-radius: var(--border-radius);
-    transition: all var(--transition-normal);
-    font-size: 1rem;
-    box-shadow: none;
+    border-radius: 0.5rem;
 }
 
 .form-control:focus {
     border-color: var(--primary-color);
-    box-shadow: 0 0 0 0.2rem rgba(0, 86, 179, 0.15);
+    box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
 }
 
 .form-label {
@@ -718,7 +720,7 @@ section {
 }
 
 section.bg-light {
-    background-color: var(--light-gray);
+    background-color: var(--light-bg);
 }
 
 /* Section heading styles */
@@ -771,14 +773,26 @@ section.bg-light {
 
 /* Scroll Animation Classes */
 .reveal {
+    position: relative;
     opacity: 0;
     transform: translateY(var(--animation-distance));
-    transition: all 0.8s ease;
+    transition: all var(--transition-normal);
 }
 
 .reveal.active {
     opacity: 1;
     transform: translateY(0);
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(var(--animation-distance));
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Language Selector Styles */
@@ -1184,12 +1198,32 @@ section.bg-light {
     justify-content: center;
     align-items: center;
     z-index: 9999;
-    transition: opacity 0.5s ease;
+    transition: opacity var(--transition-normal);
 }
 
 .preloader.fade-out {
     opacity: 0;
     pointer-events: none;
+}
+
+.loader {
+    width: 48px;
+    height: 48px;
+    border: 5px solid var(--primary-light);
+    border-bottom-color: var(--primary-color);
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 /* Medium screen sizes (tablets) */
@@ -1456,4 +1490,220 @@ section.bg-light {
     height: calc(100vh - 220px); /* Adjusted for preview strip */
     min-height: none;
     max-height: none;
+}
+
+/* General Styles */
+:root {
+    --primary-color: #0D6EFD;
+    --secondary-color: #6C757D;
+    --light-bg: #F8F9FA;
+    --dark-bg: #212529;
+}
+
+/* Service Icons */
+.service-icon {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 1.5rem;
+}
+
+/* Mission Values */
+.mission-values {
+    display: grid;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.value-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.value-item i {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+/* Technology Features */
+.tech-features {
+    display: grid;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.tech-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.tech-item i {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+/* Partner Logos */
+.partners-section img {
+    max-height: 60px;
+    filter: grayscale(100%);
+    opacity: 0.7;
+    transition: all 0.3s ease;
+}
+
+.partners-section img:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+}
+
+/* Dashboard Images */
+.dashboard-image {
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.dashboard-image:hover {
+    transform: translateY(-5px);
+}
+
+/* Section Spacing */
+.section-padding {
+    padding: 5rem 0;
+}
+
+/* Background Colors */
+.bg-light {
+    background-color: var(--light-bg);
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+}
+
+.lead {
+    font-size: 1.25rem;
+    font-weight: 300;
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    padding: 0.75rem 1.5rem;
+    font-weight: 500;
+}
+
+.btn-outline-primary {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+    padding: 0.75rem 1.5rem;
+    font-weight: 500;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .mission-values,
+    .tech-features {
+        grid-template-columns: 1fr;
+    }
+    
+    .partners-section img {
+        max-height: 40px;
+    }
+}
+
+/* Animations */
+.reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Form Styles */
+.form-control {
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+}
+
+.form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+}
+
+/* FAQ Accordion */
+.accordion-button:not(.collapsed) {
+    background-color: var(--light-bg);
+    color: var(--primary-color);
+}
+
+.accordion-button:focus {
+    box-shadow: none;
+    border-color: rgba(13, 110, 253, 0.25);
+}
+
+/* Contact Hero Section */
+.contact-hero {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.lang-suggestion {
+    position: fixed;
+    bottom: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    z-index: 9999;
+    transition: bottom var(--transition-normal);
+    max-width: 90%;
+    width: 400px;
+}
+
+.lang-suggestion.show {
+    bottom: 20px;
+}
+
+.lang-suggestion-content {
+    text-align: center;
+}
+
+.lang-suggestion-content p {
+    margin-bottom: 1rem;
+    color: var(--text-color);
+}
+
+.lang-suggestion-buttons {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+}
+
+.lang-suggestion-buttons .btn {
+    min-width: 120px;
+}
+
+@media (max-width: 480px) {
+    .lang-suggestion {
+        width: 90%;
+        padding: 0.75rem;
+    }
+    
+    .lang-suggestion-buttons {
+        flex-direction: column;
+    }
+    
+    .lang-suggestion-buttons .btn {
+        width: 100%;
+    }
 } 

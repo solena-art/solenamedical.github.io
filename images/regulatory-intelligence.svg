@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Background Circle -->
+    <circle cx="60" cy="60" r="54" fill="#F8F9FA"/>
+    
+    <!-- Shield Base -->
+    <path d="M60 30L90 40V60C90 75 75 85 60 90C45 85 30 75 30 60V40L60 30Z" stroke="#0D6EFD" stroke-width="2" fill="none"/>
+    
+    <!-- Checkmark -->
+    <path d="M45 60L55 70L75 50" stroke="#0D6EFD" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    
+    <!-- AI Elements -->
+    <circle cx="60" cy="45" r="3" fill="#0D6EFD"/>
+    <path d="M55 45L65 45" stroke="#0D6EFD" stroke-width="2" stroke-linecap="round"/>
+    <path d="M60 40L60 50" stroke="#0D6EFD" stroke-width="2" stroke-linecap="round"/>
+</svg> 

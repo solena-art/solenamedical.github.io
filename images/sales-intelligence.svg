@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Background Circle -->
+    <circle cx="60" cy="60" r="54" fill="#F8F9FA"/>
+    
+    <!-- Chart Elements -->
+    <path d="M30 90V40" stroke="#0D6EFD" stroke-width="4" stroke-linecap="round"/>
+    <path d="M30 90H90" stroke="#0D6EFD" stroke-width="4" stroke-linecap="round"/>
+    
+    <!-- Data Points -->
+    <circle cx="40" cy="70" r="4" fill="#0D6EFD"/>
+    <circle cx="50" cy="60" r="4" fill="#0D6EFD"/>
+    <circle cx="60" cy="50" r="4" fill="#0D6EFD"/>
+    <circle cx="70" cy="40" r="4" fill="#0D6EFD"/>
+    
+    <!-- Trend Line -->
+    <path d="M40 70L50 60L60 50L70 40" stroke="#0D6EFD" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    
+    <!-- AI Elements -->
+    <path d="M85 30C85 30 90 35 95 30" stroke="#0D6EFD" stroke-width="2" stroke-linecap="round"/>
+    <circle cx="90" cy="25" r="3" fill="#0D6EFD"/>
+</svg> 

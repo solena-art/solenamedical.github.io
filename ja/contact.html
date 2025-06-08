@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>お問い合わせ - SOLENA</title>
+    <title>お問い合わせ - SOLENA AI Intelligence</title>
+    <meta name="description" content="医療技術および化粧品業界向けのAI駆動型インテリジェンスプラットフォームのデモを予約するために、SOLENAにお問い合わせください。">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
@@ -13,18 +14,18 @@
 </head>
 <body>
     <!-- Language Selector -->
-<div class="language-dropdown">
-    <button class="language-toggle" aria-expanded="false" aria-haspopup="true" aria-label="言語選択">
-        <span class="active-language">JP</span>
-        <i class="fas fa-chevron-down ms-2"></i>
-    </button>
-    <div class="language-dropdown-content" role="menu">
-        <a href="../index.html" role="menuitem">English</a>
-        <a href="../ko/index.html" role="menuitem">한국어</a>
-        <a href="../ja/index.html" class="active" role="menuitem" aria-current="page">日本語</a>
-        <a href="../de/index.html" role="menuitem">Deutsch</a>
+    <div class="language-dropdown">
+        <button class="language-toggle" aria-expanded="false" aria-haspopup="true" aria-label="言語選択">
+            <span class="active-language">JA</span>
+            <i class="fas fa-chevron-down ms-2"></i>
+        </button>
+        <div class="language-dropdown-content" role="menu">
+            <a href="../index.html" role="menuitem">English</a>
+            <a href="../ko/index.html" role="menuitem">한국어</a>
+            <a href="index.html" class="active" role="menuitem" aria-current="page">日本語</a>
+            <a href="../de/index.html" role="menuitem">Deutsch</a>
+        </div>
     </div>
-</div>  
 
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
@@ -32,7 +33,7 @@
             <a class="navbar-brand" href="index.html">
                 <img src="../images/__SOLENA_LOGO.png" alt="SOLENA" class="logo-img" style="height: 28px;">
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="ナビゲーション切り替え">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -55,81 +56,12 @@
     </nav>
 
     <!-- Contact Hero Section -->
-    <section class="hero-section">
+    <section class="contact-hero py-5">
         <div class="container">
-            <div class="row min-vh-100 align-items-center">
+            <div class="row align-items-center">
                 <div class="col-lg-8">
-                    <h1 class="display-4 fw-bold mb-4">お問い合わせ</h1>
-                    <p class="lead mb-4">グローバル医療機器市場参入についてご相談ください</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Form Section -->
-    <section class="py-5">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="card border-0 shadow-sm">
-                        <div class="card-body p-4 p-md-5">
-                            <h2 class="h3 mb-4 text-center">グローバルな旅を始めましょう</h2>
-                            <p class="text-center text-muted mb-4">医療機器とグローバル市場の目標についてお知らせください。当社の専門家が国際的な成功への道をナビゲートいたします。</p>
-                            <form id="contactForm" action="https://formspree.io/f/xwpojgon" method="POST" class="needs-validation" novalidate>
-                                <input type="hidden" name="_subject" value="New Contact Form Submission">
-                                <input type="hidden" name="_captcha" value="false">
-                                <input type="hidden" name="_next" value="http://localhost:8000/ja/confirmation.html">
-                                <input type="text" name="_gotcha" style="display:none">
-                                <div class="row g-3">
-                                    <div class="col-md-6">
-                                        <label for="name" class="form-label">お名前</label>
-                                        <input type="text" class="form-control" id="name" name="name" required>
-                                        <div class="invalid-feedback">
-                                            お名前を入力してください。
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label for="email" class="form-label">メールアドレス</label>
-                                        <input type="email" class="form-control" id="email" name="email" required>
-                                        <div class="invalid-feedback">
-                                            有効なメールアドレスを入力してください。
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <label for="company" class="form-label">会社名</label>
-                                        <input type="text" class="form-control" id="company" name="company" required>
-                                        <div class="invalid-feedback">
-                                            会社名を入力してください。
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <label for="device" class="form-label">医療機器の種類</label>
-                                        <input type="text" class="form-control" id="device" name="device" required>
-                                        <div class="invalid-feedback">
-                                            医療機器の種類を入力してください。
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <label for="markets" class="form-label">ターゲット市場</label>
-                                        <input type="text" class="form-control" id="markets" name="markets" placeholder="例：EU、米国、アジア" required>
-                                        <div class="invalid-feedback">
-                                            ターゲット市場を指定してください。
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <label for="message" class="form-label">メッセージ</label>
-                                        <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
-                                        <div class="invalid-feedback">
-                                            メッセージを入力してください。
-                                        </div>
-                                    </div>
-                                    <div class="col-12 text-center">
-                                        <button type="submit" class="btn btn-primary btn-lg">メッセージを送信</button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
+                    <h1 class="display-4 fw-bold mb-4">AIでビジネスを変革する</h1>
+                    <p class="lead mb-4">当社のAIプラットフォームが販売、マーケティング、規制関連業務で成功を収める方法をご覧いただくために、デモを予約してください。</p>
                 </div>
             </div>
         </div>
@@ -139,14 +71,143 @@
     <section class="py-5 bg-light">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-lg-8 text-center">
-                    <h2 class="h3 mb-4">連絡先情報</h2>
-                    <p class="lead mb-4">グローバル医療機器市場参入についてご相談したい場合は、いつでもお気軽にお問い合わせください。</p>
-                    <div class="d-flex justify-content-center gap-4">
-                        <a href="mailto:info@solenamedical.com" class="text-decoration-none">
-                            <i class="fas fa-envelope fa-2x text-primary"></i>
-                            <p class="mt-2">info@solenamedical.com</p>
-                        </a>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center">
+                            <i class="fas fa-envelope fa-3x text-primary mb-3"></i>
+                            <h3 class="h5">メールでお問い合わせ</h3>
+                            <p class="text-muted mb-0">
+                                <a href="mailto:info@solenamedical.com" class="text-decoration-none">info@solenamedical.com</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="contact-form py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <h2 class="mb-4">デモをリクエスト</h2>
+                    <form id="demoForm" class="needs-validation" novalidate>
+                        <div class="mb-3">
+                            <label for="name" class="form-label">氏名</label>
+                            <input type="text" class="form-control" id="name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="company" class="form-label">会社名</label>
+                            <input type="text" class="form-control" id="company" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">勤務先メールアドレス</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="phone" class="form-label">電話番号</label>
+                            <input type="tel" class="form-control" id="phone">
+                        </div>
+                        <div class="mb-3">
+                            <label for="industry" class="form-label">業界</label>
+                            <select class="form-select" id="industry" required>
+                                <option value="">業界を選択してください</option>
+                                <option value="cosmetics">化粧品</option>
+                                <option value="diagnostics">診断</option>
+                                <option value="medtech">医療技術</option>
+                                <option value="other">その他</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="interest" class="form-label">関心のある分野</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="sales" id="sales">
+                                <label class="form-check-label" for="sales">セールスインテリジェンス</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="marketing" id="marketing">
+                                <label class="form-check-label" for="marketing">マーケティングインテリジェンス</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="regulatory" id="regulatory">
+                                <label class="form-check-label" for="regulatory">規制インテリジェンス</label>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">追加情報</label>
+                            <textarea class="form-control" id="message" rows="4"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">デモを予約</button>
+                    </form>
+                </div>
+                <div class="col-lg-6">
+                    <div class="contact-info">
+                        <h2 class="mb-4">なぜSOLENAを選ぶのか？</h2>
+                        <div class="info-card mb-4">
+                            <i class="fas fa-robot"></i>
+                            <h3>高度なAI技術</h3>
+                            <p>当社独自のAIプラットフォームは、機械学習、NLP、予測分析を組み合わせて、実用的なインサイトを提供します。</p>
+                        </div>
+                        <div class="info-card mb-4">
+                            <i class="fas fa-shield-alt"></i>
+                            <h3>コンプライアンス第一のアプローチ</h3>
+                            <p>データセキュリティのためのSOC 2タイプII認定を受けたHIPAAおよびGDPR準拠のインフラストラクチャ。</p>
+                        </div>
+                        <div class="info-card">
+                            <i class="fas fa-chart-line"></i>
+                            <h3>実証済みの結果</h3>
+                            <p>当社のAIソリューションでビジネスを変革した、主要なヘルスケアおよび化粧品メーカーの仲間入りをしましょう。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">よくある質問</h2>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="accordion" id="faqAccordion">
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                    AIプラットフォームはどのように機能しますか？
+                                </button>
+                            </h3>
+                            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    当社のプラットフォームは、高度なAIアルゴリズムを使用して複数のソースからのデータを分析し、販売、マーケティング、規制に関する意思決定のための実用的なインサイトを提供します。システムは、新しいデータと結果に基づいて継続的に学習し、改善されます。
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                    どのような種類のデータを処理しますか？
+                                </button>
+                            </h3>
+                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    販売記録、マーケティングキャンペーンの結果、消費者行動、規制文書、市場動向など、さまざまな種類のデータを処理します。すべてのデータ処理は、関連するプライバシー規制に準拠しています。
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                    導入にはどのくらい時間がかかりますか？
+                                </button>
+                            </h3>
+                            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    導入には通常4〜6週間かかりますが、お客様の特定のニーズとデータ統合の要件によって異なります。プロセス全体を通じて包括的なサポートを提供します。
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -157,11 +218,20 @@
     <footer class="bg-dark text-light py-4">
         <div class="container">
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-4">
                     <h5>SOLENA</h5>
-                    <p>医療機器メーカーのグローバルな成功を支援します。</p>
+                    <p>医療技術、ヘルスケア、化粧品メーカーが世界で成功するための支援をします。</p>
                 </div>
-                <div class="col-md-6 text-md-end">
+                <div class="col-md-4">
+                    <h5>クイックリンク</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html">ホーム</a></li>
+                        <li><a href="about.html">会社概要</a></li>
+                        <li><a href="services.html">サービス</a></li>
+                        <li><a href="contact.html">お問い合わせ</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 text-md-end">
                     <p>お問い合わせ: <a href="mailto:info@solenamedical.com" class="text-light">info@solenamedical.com</a></p>
                 </div>
             </div>
@@ -172,5 +242,21 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Custom JS -->
     <script src="../js/main.js"></script>
+    <script>
+        // Form validation and submission handling
+        (function () {
+            'use strict'
+            var forms = document.querySelectorAll('.needs-validation')
+            Array.prototype.slice.call(forms).forEach(function (form) {
+                form.addEventListener('submit', function (event) {
+                    if (!form.checkValidity()) {
+                        event.preventDefault()
+                        event.stopPropagation()
+                    }
+                    form.classList.add('was-validated')
+                }, false)
+            })
+        })()
+    </script>
 </body>
 </html> 
